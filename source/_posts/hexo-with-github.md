@@ -22,13 +22,16 @@ Hexo是一种静态博客程序，初次使用，具体效果还不确定，但�
 可以用Git Bash或终端输入以下命令，#后的为注释。
 ``` bash
     $ npm install hexo -g #全局安装hexo，有些资料写的是npm install hexo-cli -g，应该按这个来，不过没试过
+```
+[更新于20160328]在mac上又试了一次，最新的hexo应该用`npm install hexo-cli -g` 这个命令
+``` bash
     $ npm install hexo-deployer-git --save #安装git部署插件，hexo3.0开始必须要这样，不然无法部署
 ```
 
 cd到你想放博客的文件夹下，比如`E:/Hexo`
 ``` bash
     $ hexo init #初始化，然后该文件夹下就会有一系列的文件
-    $ npm install #安装依赖包，这步之前忘记过
+    $ npm install #安装依赖包，这步之前忘记过 ［updated 20160328］移到别的地方后也要执行这一步！
 ```
 
 然后就可以本地查看你的博客啦~
@@ -41,7 +44,7 @@ cd到你想放博客的文件夹下，比如`E:/Hexo`
 ## 部署到Github
 编辑`E:/Hexo`下的`_config.yml`文件，在文件最下方修改`deploy:`部分为
 ``` bash
-    deploy: 
+    deploy:
       type: git
       repository: git@github.com:codingstar/codingstar.github.io.git
       branch: master
