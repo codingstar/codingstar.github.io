@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>用Github Pages搭建Hexo个人博客 | Cool King</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hexo是一种静态博客程序，初次使用，具体效果还不确定，但据说很好用，于是就来试试啦~
+搭建过程很简单
+安装基本工具首先需要安装nodejs、npm、git，这个之前都用到过，具体安装配置方法就不赘述了。
+Github相关注册Github账号，添加ssh公钥等基本配置。然后新建一个仓库，一定要命名为username.github.io，username是你Github的账号。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Github Pages搭建Hexo个人博客">
+<meta property="og:url" content="http://yoursite.com/2015/05/28/hexo-with-github/index.html">
+<meta property="og:site_name" content="Cool King">
+<meta property="og:description" content="Hexo是一种静态博客程序，初次使用，具体效果还不确定，但据说很好用，于是就来试试啦~
+搭建过程很简单
+安装基本工具首先需要安装nodejs、npm、git，这个之前都用到过，具体安装配置方法就不赘述了。
+Github相关注册Github账号，添加ssh公钥等基本配置。然后新建一个仓库，一定要命名为username.github.io，username是你Github的账号。">
+<meta property="og:updated_time" content="2016-03-28T14:00:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Github Pages搭建Hexo个人博客">
+<meta name="twitter:description" content="Hexo是一种静态博客程序，初次使用，具体效果还不确定，但据说很好用，于是就来试试啦~
+搭建过程很简单
+安装基本工具首先需要安装nodejs、npm、git，这个之前都用到过，具体安装配置方法就不赘述了。
+Github相关注册Github账号，添加ssh公钥等基本配置。然后新建一个仓库，一定要命名为username.github.io，username是你Github的账号。">
+  
+    <link rel="alternative" href="/atom.xml" title="Cool King" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cool King</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://wonderflow.github.io/">bobo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://comzyh.com/blog/">comzyh</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://implusdream.info/">翔哥</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://justyc.sinaapp.com/">justyc</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.proginn.com/user/register/13234">程序员客栈</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://honx.in/_UqRN5IKo114jtl5H">红杏</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cool King</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cool King</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-hexo-with-github" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/28/hexo-with-github/" class="article-date">
+  	<time datetime="2015-05-28T01:46:51.000Z" itemprop="datePublished">2015-05-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用Github Pages搭建Hexo个人博客
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexo是一种静态博客程序，初次使用，具体效果还不确定，但据说很好用，于是就来试试啦~</p>
+<p>搭建过程很简单</p>
+<h2 id="安装基本工具"><a href="#安装基本工具" class="headerlink" title="安装基本工具"></a>安装基本工具</h2><p>首先需要安装nodejs、npm、git，这个之前都用到过，具体安装配置方法就不赘述了。</p>
+<h3 id="Github相关"><a href="#Github相关" class="headerlink" title="Github相关"></a>Github相关</h3><p>注册Github账号，添加ssh公钥等基本配置。然后新建一个仓库，<em>一定</em>要命名为<code>username.github.io</code>，<code>username</code>是你Github的账号。<br><a id="more"></a></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>我现在安装的是hexo3.1+，从版本3往上有些地方跟以前用法不同，按以前的资料操作可能会出现问题，因此查阅资料的时候注意下别人用的版本~</p>
+<p>可以用Git Bash或终端输入以下命令，#后的为注释。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo -g <span class="comment">#全局安装hexo，有些资料写的是npm install hexo-cli -g，应该按这个来，不过没试过</span></span><br></pre></td></tr></table></figure></p>
+<p>[更新于20160328]在mac上又试了一次，最新的hexo应该用<code>npm install hexo-cli -g</code> 这个命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save <span class="comment">#安装git部署插件，hexo3.0开始必须要这样，不然无法部署</span></span><br></pre></td></tr></table></figure></p>
+<p>cd到你想放博客的文件夹下，比如<code>E:/Hexo</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init <span class="comment">#初始化，然后该文件夹下就会有一系列的文件</span></span><br><span class="line">$ npm install <span class="comment">#安装依赖包，这步之前忘记过 ［updated 20160328］移到别的地方后也要执行这一步！</span></span><br></pre></td></tr></table></figure></p>
+<p>然后就可以本地查看你的博客啦~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g <span class="comment">#即编译，hexo generate</span></span><br><span class="line">$ hexo s <span class="comment">#即启动服务器，hexo server</span></span><br></pre></td></tr></table></figure></p>
+<p>查看<code>http://localhost:4000/</code>就可以访问到你的博客啦~</p>
+<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><p>编辑<code>E:/Hexo</code>下的<code>_config.yml</code>文件，在文件最下方修改<code>deploy:</code>部分为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:codingstar/codingstar.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>其中repository部分填写自己的远程仓库的git地址。hexo3.0以上的type应为git而不是github。</p>
+<p>同时在这个文件开头，也可以修改自己博客的名字、作者等信息，或者绑定已有域名。</p>
+<p>修改完<code>_config.yml</code>文件后，我们可以通过下面的命令部署到Github<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d <span class="comment">#等同于hexo deploy</span></span><br></pre></td></tr></table></figure></p>
+<p>至此，你可以访问<code>http://codingstar.github.io/</code>查看你的博客啦~</p>
+<h2 id="Hexo主题"><a href="#Hexo主题" class="headerlink" title="Hexo主题"></a>Hexo主题</h2><p>安装Hexo的主题很简单，只要打开<code>E:\Hexo\themes\</code>，然后在这里clone你想要的主题，比如我现在用的主题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git</span><br><span class="line">$ <span class="built_in">cd</span> hexo-theme-yilia</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>E:\Hexo\_config.yml</code>中的theme项改为你的主题的文件夹名字即可。</p>
+<h2 id="发表一个文章"><a href="#发表一个文章" class="headerlink" title="发表一个文章"></a>发表一个文章</h2><p>1、在终端执行 <code>$ hexo new &quot;my new post&quot;</code><br>2、在<code>E:\Hexo\source\_post</code>下打开my-new-post.md文件，参考<a href="http://lutaf.com/markdown-simple-usage.htm" target="_blank" rel="external">markdown 简明语法</a>，<a href="http://wowubuntu.com/markdown/#html" target="_blank" rel="external">Markdown 语法说明 (简体中文版)</a>，很快就能学会~</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>1、<a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">使用Hexo搭建个人博客(基于hexo3.0)</a><br>2、<a href="http://ningban.github.io/2015/03/19/hexo3-is-awesome/" target="_blank" rel="external">升级hexo3遇到的坑</a><br>3、<a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">Hexo搭建Github静态博客</a><br>4、<a href="http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog/" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/28/daily-life/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          逐渐走上正轨
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hexo-with-github" data-title="用Github Pages搭建Hexo个人博客" data-url="http://yoursite.com/2015/05/28/hexo-with-github/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Cool King
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
