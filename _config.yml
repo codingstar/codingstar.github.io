@@ -40,7 +40,11 @@ future: true
 highlight:
   enable: true
   line_number: true
+<<<<<<< HEAD
   auto_detect: false
+=======
+  auto_detect: true
+>>>>>>> 84a3abdeb9707aca6e9b1840407f75c6ca00eb63
   tab_replace:
 
 # Category & Tag
