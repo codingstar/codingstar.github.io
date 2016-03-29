@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【天池】穿衣搭配-第一赛季 | Cool King</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近阴差阳错地入了天池大数据比赛的坑，第一次参加这种比赛，收获还是不少的~在此记录一下~
+麻麻我不会穿衣搭配最初看到这个题目，第一感觉是好难啊，理解题目理解了好久，那么多数据集，组织形式都不一样，而且还有图像，都不知道如何下手，不知如何把这些数据组织起来。
+好在袁老板和君哥跟我进行了初步的探讨，带我稍稍入了下门~让我知道了协同过滤、关联规则挖掘这些算法的存在。然后袁老板的由简入繁的思想一直影响着我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【天池】穿衣搭配-第一赛季">
+<meta property="og:url" content="http://yoursite.com/2015/10/28/tianchi-round-one/index.html">
+<meta property="og:site_name" content="Cool King">
+<meta property="og:description" content="最近阴差阳错地入了天池大数据比赛的坑，第一次参加这种比赛，收获还是不少的~在此记录一下~
+麻麻我不会穿衣搭配最初看到这个题目，第一感觉是好难啊，理解题目理解了好久，那么多数据集，组织形式都不一样，而且还有图像，都不知道如何下手，不知如何把这些数据组织起来。
+好在袁老板和君哥跟我进行了初步的探讨，带我稍稍入了下门~让我知道了协同过滤、关联规则挖掘这些算法的存在。然后袁老板的由简入繁的思想一直影响着我">
+<meta property="og:updated_time" content="2016-03-28T09:22:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【天池】穿衣搭配-第一赛季">
+<meta name="twitter:description" content="最近阴差阳错地入了天池大数据比赛的坑，第一次参加这种比赛，收获还是不少的~在此记录一下~
+麻麻我不会穿衣搭配最初看到这个题目，第一感觉是好难啊，理解题目理解了好久，那么多数据集，组织形式都不一样，而且还有图像，都不知道如何下手，不知如何把这些数据组织起来。
+好在袁老板和君哥跟我进行了初步的探讨，带我稍稍入了下门~让我知道了协同过滤、关联规则挖掘这些算法的存在。然后袁老板的由简入繁的思想一直影响着我">
+  
+    <link rel="alternative" href="/atom.xml" title="Cool King" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cool King</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://wonderflow.github.io/">bobo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://comzyh.com/blog/">comzyh</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://implusdream.info/">翔哥</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://justyc.sinaapp.com/">justyc</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.proginn.com/user/register/13234">程序员客栈</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://honx.in/_UqRN5IKo114jtl5H">红杏</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cool King</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cool King</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-tianchi-round-one" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/tianchi-round-one/" class="article-date">
+  	<time datetime="2015-10-28T02:20:10.000Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【天池】穿衣搭配-第一赛季
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学术/">学术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近阴差阳错地入了天池大数据比赛的坑，第一次参加这种比赛，收获还是不少的~在此记录一下~</p>
+<h2 id="麻麻我不会穿衣搭配"><a href="#麻麻我不会穿衣搭配" class="headerlink" title="麻麻我不会穿衣搭配"></a>麻麻我不会穿衣搭配</h2><p>最初看到这个题目，第一感觉是好难啊，理解题目理解了好久，那么多数据集，组织形式都不一样，而且还有图像，都不知道如何下手，不知如何把这些数据组织起来。</p>
+<p>好在袁老板和君哥跟我进行了初步的探讨，带我稍稍入了下门~让我知道了协同过滤、关联规则挖掘这些算法的存在。然后袁老板的由简入繁的思想一直影响着我整个比赛过程，不然按照我强迫症和懒癌晚期的性子来的话，肯定没法开始就放弃了。</p>
+<p>拖了好久，看了好些资料才决定用python来写这个代码，到10月13日才正式开始敲代码来做这道题，而我还没学过python。幸好这个时候找到了姐姐和我玩这道题，于是我们先用搭配套餐划分了测试集和训练集，姐姐给力地完成了线下评测程序。</p>
+<p>然后我们就开始各种摸索：<br><a id="more"></a><br>最初我们想到的是同一用户购买的商品之间有搭配关系，购买同一商品的用户购买的其他商品跟它可能也有关系；根据搭配套餐可以得到类别搭配关系和分词搭配关系。因此：</p>
+<ol>
+<li><p>一方面用搭配套餐得到类别之间的搭配关系，然后直接用测试商品的类别找到对应类别的商品，取前200个。这种方法有很大的盲目性，折腾半天也只有0.009%左右。。。= =不忍直视<br>另一方面，姐姐用买过某种商品的用户买的其他商品与之搭配，效果也不好。（当时可能脑子不好使，以为同一用户购买过的两种商品的搭配，不好实现。。。= =）</p>
+</li>
+<li><p>尝试加入分词特征，但是却一直往关键词提取上跑，用过tf-idf啥的都跑偏了。我们一直天真地以为是参数问题，最好突然就能蒙到一个参数让它提高一大截。。。事实证明还是想太多了</p>
+</li>
+<li><p>经过和袁老板讨论，我们决定尝试打分法，给分词之间的搭配度打分，然后用每个测试商品的分词和所有商品的分词对比打分，取得分最高的200个。费了很大劲，但是结果却只能上0.03%。</p>
+</li>
+<li><p>在我们在坑里越陷越深的时候，大神翔哥及时给我指明了一个方向，就是同一用户购买的两个商品之间是有搭配关系的~虽然其实按大神们的表述是：两个商品被同一个人购买的次数越大越搭配，但是其实应该是殊途同归的~可是我写出来的代码效果还是不理想，幸好我已经意识到调参是不能改变数量级的，得加新想法。于是我把加入到历史商品的候选集中，并设置为一个较大的评分，我们终于站上了3！</p>
+</li>
+<li><p>最后翔哥告诉我他发现了按照商品相似度排序就能达到4，加上搭配集作为筛选可以到6，我连夜实现了这个想法，却始终都只有1.5左右T^T。。。我只能两手准备，在之前的思路基础上，按相似度排序把不足200的商品补足，可以达到线下3.7。最终调了各种参数做到了线下3.8，线上4.13结束第一赛季。</p>
+</li>
+</ol>
+<h2 id="大神带我飞"><a href="#大神带我飞" class="headerlink" title="大神带我飞"></a>大神带我飞</h2><p>第一次做这种比赛，接触到这种数量级的数据，感觉真的很奇妙，现在回想起来，之前好长一阵时间都徘徊在0.01附近都不知道是咋回事，差点都要放弃。可是偶然看到阿杜自己一个人打比赛，在自己电脑上写下了“一定要坚持做天池”；论坛上天池师兄写的一定要坚持做完一次比赛；翔哥的鼓励和帮助。。。我觉得一定得踏踏实实做完一次才能不让自己后悔，别人都可以的事情我也能做得到。</p>
+<p>而姐姐作为我的队友，感觉一开始也是抱着试一试玩一玩的心态的，可是后来越来越上心，我又找回了原来和队友一起努力的感觉。期间yc和qy的鼓励和帮忙给点子也着实给了我很多启发。真的是一种很奇妙的感觉。</p>
+<h2 id="关于天池比赛"><a href="#关于天池比赛" class="headerlink" title="关于天池比赛"></a>关于天池比赛</h2><p>通过这个比赛，虽然还只是第一赛季，虽然我只是个弱菜，但是还算认识了一些大神的id和他们的世界。虽然在大神的眼里，某些想法就是最简单的想法了，但是对于我这个数据挖掘的小菜来说，都是新鲜事物。后来根据 偏执狂小江 分享的<a href="http://bbs.aliyun.com/read/261137.html?spm=5176.bbsl254.0.0.pV4mdN" target="_blank" rel="external">详细思路</a>，我又重新实现了一下，线下能达到5.1了，虽然大家都能达到6.2 T^T。</p>
+<h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><p>1、仔细分析数据和分析的方法非常重要。若是不发现那个相似度的规律，怎么也不会用这种方法来做。不能先入为主地以为一些常识就是数据的规律。<br>2、脑洞要大，思路不能混乱。想法会很多，但是不能让他们交织在一起，越搞越乱。要敢想敢做。没有突破的时候要勇于尝试新想法。<br>3、词袋模型，TF-IDF向量，余弦相似性。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/19/develop-notes/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          develop notes
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/20/recent-for-0920/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最近工作梳理</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="tianchi-round-one" data-title="【天池】穿衣搭配-第一赛季" data-url="http://yoursite.com/2015/10/28/tianchi-round-one/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Cool King
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258257455'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258257455%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
