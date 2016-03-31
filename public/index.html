@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a>
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a>
 					</div>
 				</section>
 				
@@ -186,6 +186,63 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-mysql-privileges" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/30/mysql-privileges/" class="article-date">
+  	<time datetime="2016-03-30T02:48:51.000Z" itemprop="datePublished">2016-03-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/30/mysql-privileges/">mysql访问权限控制命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为了保证安全性，mysql默认都是只允许localhost访问的，但是实际操作中，会需要远程访问。可以用下面的命令：</p>
+<h2 id="授权法"><a href="#授权法" class="headerlink" title="授权法"></a>授权法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON dbname.* TO <span class="string">'myuser'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'mypassword'</span> WITH GRANT OPTION;</span><br><span class="line">flush PRIVILEGES;</span><br></pre></td></tr></table></figure>
+<p>表示将dbname数据库的所有表的权限 授权给 任意ip 以myuser用户名和mypassword密码登录。然后立即刷新，使授权生效。</p>
+<p>还有另一种方法是改表法，命令比较多，实际用起来不如授权法方便，这里就不写了～</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>1、<a href="http://www.xshell.net/database/1206.html" target="_blank" rel="external">解决MySQL不允许从远程访问的方法</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-ife-task3" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -446,7 +503,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Recently, I read a paper named <a web="" service="" for="" scholarly="" big="" data="" information="" extraction="">. Here is some notes about it.</a></p>
+        <p>Recently, I read a paper named <A Web Service for Scholarly Big Data Information Extraction>. Here is some notes about it.</p>
 <p>#Abstract</p>
 <h3 id="Extraction"><a href="#Extraction" class="headerlink" title="Extraction"></a>Extraction</h3><ul>
 <li>The automatic extraction of metadata and other information from scholarly documents</li>
@@ -461,160 +518,6 @@
 <li><p>a <em>RESTful API</em> for scholarly information extraction that exploits the fact that there is duplication in scholarly big data and makes use of a near duplicate matching backend</p>
 </li>
 <li><p>the duplicate document matching results in a difference of <em>8.46%</em> in the time required to extract header and citation information from approximately <em>3.5 million</em> documents compared to a baseline.</p>
-</li>
-</ul>
-<p>#Introduction</p>
-<h3 id="Scholarly-big-data"><a href="#Scholarly-big-data" class="headerlink" title="Scholarly big data"></a>Scholarly big data</h3><blockquote>
-<p>refers to the vast amount of data produced as the result of scholarly undertaking and includes journals, conference proceedings, theses, books, patents and experimental data.</p>
-</blockquote>
-<h3 id="three-V’s-gt-big-data"><a href="#three-V’s-gt-big-data" class="headerlink" title="three V’s =&gt; big data"></a>three V’s =&gt; big data</h3><ul>
-<li>volume<br>Microsoft Academic contains over 50 million records for academic documents and that about 43% of the articles published between the years 2008 and 2011 are freely available online</li>
-<li>velocity<br>in 2010, the annual growth rates of several popular academic databases between 1997 and 2006 ranged from 2.7 to 13.5%</li>
-<li>variety<br>the the different types of scholarly output that is produced</li>
-</ul>
-<p>furthermore</p>
-<ul>
-<li>value</li>
-<li>veracity</li>
-<li>viscosity</li>
-<li>vulnerability</li>
-</ul>
-<h3 id="services-for-managing-and-providing-access-to-scholarly-big-data"><a href="#services-for-managing-and-providing-access-to-scholarly-big-data" class="headerlink" title="services for managing and providing access to scholarly big data"></a>services for managing and providing access to scholarly big data</h3><ul>
-<li>Google Scholar</li>
-<li>Microsoft Academic</li>
-<li>CiteSeerχ</li>
-<li>the ArXiv<br>they are automatic metadata extraction.</li>
-</ul>
-<p>Web-accessible API =&gt; simplify this extraction</p>
-<ul>
-<li>provide a single point of operation that can be incorporated into multiple document and scientific workflows</li>
-<li>allow for <em>easier processing</em> of data</li>
-</ul>
-<p>since in scholarly publications &lt;= duplication is common<br>in big data scale, methods are need to improve ectractor performance</p>
-<h3 id="CiteSeerExtractor"><a href="#CiteSeerExtractor" class="headerlink" title="CiteSeerExtractor"></a>CiteSeerExtractor</h3><p>a Web service for scholar information extraction that deals with the issue of big data by storing metadata after it is extracted</p>
-<p>when a new paper is submitted, check if it matches with a previously submitted document</p>
-<p><em>The document matching algorithm</em> is able to deal with matches that are not bitwise identical and that might have minor differences.</p>
-<p>#Related Work</p>
-<h3 id="ParsCit"><a href="#ParsCit" class="headerlink" title="ParsCit"></a>ParsCit</h3><p>users submit the plain text of papers then returns the parsed citations</p>
-<h3 id="GROBID"><a href="#GROBID" class="headerlink" title="GROBID"></a>GROBID</h3><p>a library for extracting metadata form scholarly documents</p>
-<ul>
-<li>header metadata, citation metadata &amp; parse the metadata</li>
-</ul>
-<p>includes a RESTful API -&gt; access the service from other programs</p>
-<ul>
-<li>match extracted metadata with Crossref</li>
-<li>if core metadata, such as the title or first author, is matched, </li>
-<li>then the system attempts to retrieve the full publisher metadata.</li>
-</ul>
-<h3 id="FreeCite"><a href="#FreeCite" class="headerlink" title="FreeCite"></a>FreeCite</h3><ul>
-<li>based on ParsCit</li>
-<li>users submit a single citation string or list of citation strings and they are parsed and tagged.</li>
-</ul>
-<h3 id="CiteSeerExtractor-1"><a href="#CiteSeerExtractor-1" class="headerlink" title="CiteSeerExtractor"></a>CiteSeerExtractor</h3><ul>
-<li>provides a generic framework that can easily be extended to allow for additional extractors to be incorporated (Section IV)</li>
-</ul>
-<p>none of these services specifically try to address the <em>challenges of big data</em><br>by making use of <em>near duplicate matching</em></p>
-<p>Some tools make use of Web services to perform or improve metadata extraction showing how Web services can be incorporated into metadata extraction workflows</p>
-<ul>
-<li>PDFMeat</li>
-<li>Mendeley</li>
-<li>Gao’s similar system</li>
-</ul>
-<p>#API Design</p>
-<h3 id="Resource-Oriented-Architecture"><a href="#Resource-Oriented-Architecture" class="headerlink" title="Resource Oriented Architecture"></a>Resource Oriented Architecture</h3><h3 id="CiteSeerExtractor-2"><a href="#CiteSeerExtractor-2" class="headerlink" title="CiteSeerExtractor"></a>CiteSeerExtractor</h3><blockquote>
-<p>a RESTful Web service based on the Resource Oriented Architecture (ROA 资源导向架构).</p>
-</blockquote>
-<p>benefits:</p>
-<ul>
-<li>being lightweight</li>
-<li>scalable</li>
-<li>easily accessible</li>
-</ul>
-<p>ROA’s main concepts:</p>
-<ul>
-<li>resources:<blockquote>
-<p>something that is important enough that it is worth being referenced</p>
-</blockquote>
-</li>
-<li>identifiers:<blockquote>
-<p>a URI that is unique for the resource and that allows for one of the <strong>representations of the resource</strong> to be accessed, where a representation of a resource is some view of that resources</p>
-</blockquote>
-</li>
-<li>representations of resources</li>
-<li>the links between resources</li>
-</ul>
-<p>ROA’s main properties:</p>
-<ul>
-<li>addressability: information is exposed through URIs</li>
-<li>statelessness: HTTP requests are independent of each other and can happen in isolation</li>
-<li>connectedness: there are links between content</li>
-<li>a uniform interface: HTTP provides a uniform interface</li>
-</ul>
-<ol>
-<li><em>Resources</em><blockquote>
-<p>Documents (PDF, PS, TXT)</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li>Submit a <code>POST</code> request to the extractor URL</li>
-<li>Create a new document resource in CiteSeerExtractor</li>
-<li>the text from the document is automatically extracted(PDFBox-&gt;pdf, ps2txt-&gt;ps)</li>
-<li>return different status code(201 success &amp; XML/JSON document, 503 error, over size)<pre><code>&lt;?xml version=“1.0” encoding=“UTF-8”?&gt;
-&lt;CSXAPIMetadata&gt;
-&lt;file&gt;base url/extractor/token/file&lt;/file&gt;
-&lt;header&gt;base url/extractor/token/header&lt;/header&gt;
-&lt;citations&gt;base url/extractor/token/citations&lt;/citations&gt;
-&lt;body&gt;base url/extractor/token/body&lt;/body&gt;
-&lt;text&gt;base url/extractor/token/text&lt;/text&gt;
-&lt;/CSXAPIMetadata&gt;
-</code></pre></li>
-</ul>
-<ol>
-<li><em>identifiers</em><br> a <em>unique and random</em> identifier is assigned when a resource has successfully been created<ul>
-<li>violates the ROA practice of having wellnamed resources</li>
-<li>simplifies the resource naming procedure</li>
-<li>since the resources are for the most part temporary, was considered a reasonable approach</li>
-</ul>
-</li>
-<li><p><em>representations</em></p>
-<blockquote>
-<p>different views of a resource<br> in CiteSeerExtractor represent different types of information extracted from the original document as well as the document itself<br> –&gt; access a resource in CiteSeerExtractor,<br> an HTTP <code>GET</code> request is made to <code>http://$url/extractor/resource id/representation</code> and if success, returns an <code>HTTP 200 OK</code> status code. </p>
-<ul>
-<li><strong>file</strong>: The original document that was submitted.</li>
-<li><strong>header</strong>: The header of the document, including the<br>title, authors, abstract, venue and any other information<br>that may be extracted.</li>
-<li><strong>citations</strong>: The citations extracted from the document.</li>
-<li><strong>body</strong>: The main body text of the document, excluding<br>the citations.</li>
-<li><strong>text</strong>: The full text of the document as extracted by an<br>appropriate text extraction tool.</li>
-</ul>
-</blockquote>
-</li>
-<li><p><em>Addressability, Statelessness, Connectedness, and Uniformity</em></p>
-</li>
-</ol>
-<h3 id="HTTP-Methods"><a href="#HTTP-Methods" class="headerlink" title="HTTP Methods"></a>HTTP Methods</h3><p>Cite-SeerExtractor supports different <strong>HTTP methods</strong> and <strong>output formats</strong>(XML,JSON).<br><img src="./table1.png" alt="HTTP METHODS SUPPORTED BY CITESEEREXTRACTOR" title="HTTP METHODS SUPPORTED BY CITESEEREXTRACTOR"></p>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><ul>
-<li>stand-alone</li>
-<li>able to run in isolation</li>
-<li>able to be integrated with a number of services</li>
-</ul>
-<p>Figure 2 shows the overarching architecture of CiteSeerExtractor<br><img src="./figure2.png" alt="CiteSeerExtractor architecture" title="CiteSeerExtractor architecture"></p>
-<p>As can be seen from the figure, the RESTful API is the entry point and communicates directly with the Python Web Server, which is responsible for handling the creation of resources and for serving various representations of those resources. Security and permissions can also be controlled and implemented at the Python Web Server level.</p>
-<h3 id="the-RESTful-API"><a href="#the-RESTful-API" class="headerlink" title="the RESTful API:"></a>the RESTful API:</h3><p>handle the creation of resources and serve various representations of those resources.<br><br>provides the functionality as described in Section III.</p>
-<h3 id="Python-Web-Serer"><a href="#Python-Web-Serer" class="headerlink" title="Python Web Serer"></a>Python Web Serer</h3><p>CiteSeerExtractor is run as a stand-alone Web server and is implemented using the web.py framework.</p>
-<h3 id="Extractors"><a href="#Extractors" class="headerlink" title="Extractors"></a>Extractors</h3><ol>
-<li>Text Extractor: PDFBox for pdf, ps2txt for ps</li>
-<li>Citation Extractor: ParsCit</li>
-<li>Header Extractor: based on a tool that classifies various aspects of a header using a support vector machine</li>
-<li>Body Extractor: the body of text, excluding the citations.</li>
-</ol>
-<h3 id="File-Store"><a href="#File-Store" class="headerlink" title="File Store"></a>File Store</h3><p>Documents and their associated text representations</p>
-<p>Access, config the permissions or delete the files on the Web server</p>
-<p>##Duplicate Matching Backend<br>NoSQL backend</p>
-<h1 id="Duplicate-Matching-Backend"><a href="#Duplicate-Matching-Backend" class="headerlink" title="Duplicate Matching Backend"></a>Duplicate Matching Backend</h1><p>The purpose of this backend is to store metadata that has already been extracted and retrieve the metadata if a document submitted is a near duplicate of a document that has previously been submitted.</p>
-<p>the performing duplicate matching does not have a detrimental effect on the performance of the system.</p>
-<h3 id="Near-Duplicate-Matching-Algorithm"><a href="#Near-Duplicate-Matching-Algorithm" class="headerlink" title="Near Duplicate Matching Algorithm"></a>Near Duplicate Matching Algorithm</h3><p><img src="./algorithm1.png" alt="Duplicate Matching Algorithm" title="Duplicate Matching Algorithm"></p>
-
       
     </div>
     
@@ -626,6 +529,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/06/08/SCBPM-paper-note/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
