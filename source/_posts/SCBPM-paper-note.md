@@ -6,19 +6,19 @@ Recently, I read a paper named <A Web Service for Scholarly Big Data Information
 
 #Abstract
 
-### Extraction 
+### Extraction
 *   The automatic extraction of metadata and other information from scholarly documents
 *   In academic digital libraries, search engines, and document management systems
 *   To allow for the management and categorization of documents and for search to take place
 
-### A Web-accessible API can *simplify* this extraction 
+### A Web-accessible API can *simplify* this extraction
 > by providing a single point of operation for extraction that can be incorporated into multiple document workflows without the need for each workflow to implement and support its own extraction functionality
 
 CiteSeerExtractor
 *   a *RESTful API* for scholarly information extraction that exploits the fact that there is duplication in scholarly big data and makes use of a near duplicate matching backend
-    
-*   the duplicate document matching results in a difference of *8.46%* in the time required to extract header and citation information from approximately *3.5 million* documents compared to a baseline.
 
+*   the duplicate document matching results in a difference of *8.46%* in the time required to extract header and citation information from approximately *3.5 million* documents compared to a baseline.
+<!--more-->
 #Introduction
 
 ### Scholarly big data
@@ -52,7 +52,7 @@ Web-accessible API => simplify this extraction
 since in scholarly publications <= duplication is common
 in big data scale, methods are need to improve ectractor performance
 
-### CiteSeerExtractor 
+### CiteSeerExtractor
 a Web service for scholar information extraction that deals with the issue of big data by storing metadata after it is extracted
 
 when a new paper is submitted, check if it matches with a previously submitted document
@@ -69,7 +69,7 @@ a library for extracting metadata form scholarly documents
 
 includes a RESTful API -> access the service from other programs
 *   match extracted metadata with Crossref
-*   if core metadata, such as the title or first author, is matched, 
+*   if core metadata, such as the title or first author, is matched,
 *   then the system attempts to retrieve the full publisher metadata.
 
 ### FreeCite
@@ -92,7 +92,7 @@ Some tools make use of Web services to perform or improve metadata extraction sh
 
 ### Resource Oriented Architecture
 
-### CiteSeerExtractor 
+### CiteSeerExtractor
 > a RESTful Web service based on the Resource Oriented Architecture (ROA 资源导向架构).
 
 benefits:
@@ -136,8 +136,8 @@ ROA's main properties:
 3. *representations*
     > different views of a resource
     in CiteSeerExtractor represent different types of information extracted from the original document as well as the document itself
-    --> access a resource in CiteSeerExtractor, 
-    an HTTP `GET` request is made to `http://$url/extractor/resource id/representation` and if success, returns an `HTTP 200 OK` status code. 
+    --> access a resource in CiteSeerExtractor,
+    an HTTP `GET` request is made to `http://$url/extractor/resource id/representation` and if success, returns an `HTTP 200 OK` status code.
     * **file**: The original document that was submitted.
     * **header**: The header of the document, including the
     title, authors, abstract, venue and any other information

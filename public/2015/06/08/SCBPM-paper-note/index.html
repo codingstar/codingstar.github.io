@@ -22,7 +22,7 @@ In academic digital libraries, se">
 <meta property="og:image" content="http://yoursite.com/./table1.png">
 <meta property="og:image" content="http://yoursite.com/./figure2.png">
 <meta property="og:image" content="http://yoursite.com/./algorithm1.png">
-<meta property="og:updated_time" content="2016-03-28T09:22:26.000Z">
+<meta property="og:updated_time" content="2016-03-31T03:37:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCBPM paper note">
 <meta name="twitter:description" content="Recently, I read a paper named . Here is some notes about it.
@@ -126,7 +126,7 @@ In academic digital libraries, se">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a>
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a>
 					</div>
 				</section>
 				
@@ -254,9 +254,10 @@ In academic digital libraries, se">
 <li><p>a <em>RESTful API</em> for scholarly information extraction that exploits the fact that there is duplication in scholarly big data and makes use of a near duplicate matching backend</p>
 </li>
 <li><p>the duplicate document matching results in a difference of <em>8.46%</em> in the time required to extract header and citation information from approximately <em>3.5 million</em> documents compared to a baseline.</p>
+<a id="more"></a>
+<p>#Introduction</p>
 </li>
 </ul>
-<p>#Introduction</p>
 <h3 id="Scholarly-big-data"><a href="#Scholarly-big-data" class="headerlink" title="Scholarly big data"></a>Scholarly big data</h3><blockquote>
 <p>refers to the vast amount of data produced as the result of scholarly undertaking and includes journals, conference proceedings, theses, books, patents and experimental data.</p>
 </blockquote>
@@ -296,7 +297,7 @@ In academic digital libraries, se">
 <p>includes a RESTful API -&gt; access the service from other programs</p>
 <ul>
 <li>match extracted metadata with Crossref</li>
-<li>if core metadata, such as the title or first author, is matched, </li>
+<li>if core metadata, such as the title or first author, is matched,</li>
 <li>then the system attempts to retrieve the full publisher metadata.</li>
 </ul>
 <h3 id="FreeCite"><a href="#FreeCite" class="headerlink" title="FreeCite"></a>FreeCite</h3><ul>
@@ -372,7 +373,7 @@ In academic digital libraries, se">
 </li>
 <li><p><em>representations</em></p>
 <blockquote>
-<p>different views of a resource<br> in CiteSeerExtractor represent different types of information extracted from the original document as well as the document itself<br> –&gt; access a resource in CiteSeerExtractor,<br> an HTTP <code>GET</code> request is made to <code>http://$url/extractor/resource id/representation</code> and if success, returns an <code>HTTP 200 OK</code> status code. </p>
+<p>different views of a resource<br> in CiteSeerExtractor represent different types of information extracted from the original document as well as the document itself<br> –&gt; access a resource in CiteSeerExtractor,<br> an HTTP <code>GET</code> request is made to <code>http://$url/extractor/resource id/representation</code> and if success, returns an <code>HTTP 200 OK</code> status code.</p>
 <ul>
 <li><strong>file</strong>: The original document that was submitted.</li>
 <li><strong>header</strong>: The header of the document, including the<br>title, authors, abstract, venue and any other information<br>that may be extracted.</li>
