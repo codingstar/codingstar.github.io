@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a>
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 15px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 17.5px;">技术</a> <a href="/tags/推荐系统/" style="font-size: 10px;">推荐系统</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 12.5px;">生活</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
 					</div>
 				</section>
 				
@@ -186,6 +186,72 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-normal-recommend-problems-and-match-problems" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/normal-recommend-problems-and-match-problems/" class="article-date">
+  	<time datetime="2016-04-15T06:56:55.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/normal-recommend-problems-and-match-problems/">一般推荐问题和搭配问题的异同</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="现有数据集"><a href="#现有数据集" class="headerlink" title="现有数据集"></a>现有数据集</h1><p>三部分：<br>    商品信息    －》    基于内容的、相似度   《－ 搭配类目过滤<br>    专家搭配    －》    概率模型（马尔可夫？）专家知识    X<br>    历史记录    －》    同时购买次数－》相关性特征构建</p>
+<h1 id="问题角度"><a href="#问题角度" class="headerlink" title="问题角度"></a>问题角度</h1><p>一般的推荐问题是：   把物品推荐给人<br>搭配推荐问题是：    把物品推荐给物品，找搭配</p>
+<h1 id="基于协同过滤"><a href="#基于协同过滤" class="headerlink" title="基于协同过滤"></a>基于协同过滤</h1><p>&emsp;&emsp;一般的协同过滤，就是原本是直接评价人和物品的关系的，现在通过协同历史评分表现，把对应评分高的物品的相似物品推荐给用户（item-based）；或者把物品推荐给评分兴趣相似的用户（user-based）。<br>&emsp;&emsp;因此，若是用协同过滤，评分rate就是物品对于物品的关系。</p>
+<ul>
+<li>第一步，关键在于这个rate的构建，rate就是我所说的搭配度</li>
+<li>第二步，对评分矩阵的处理：<ul>
+<li>稀疏矩阵分解？</li>
+<li>用于协同过滤</li>
+</ul>
+</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学术/">学术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思路记录/">思路记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/推荐系统/">推荐系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/论文/">论文</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/normal-recommend-problems-and-match-problems/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-mysql-privileges" class="article article-type-post" itemscope itemprop="blogPost">
   

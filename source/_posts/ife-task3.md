@@ -19,9 +19,11 @@ tags: [前端,总结,技术]
 1、模块之间的视觉间隔的实现方法：可以是padding，也可以是margin，在设置border的情况下，可以看到，实际显示宽度＝width＋padding。
 2、在不设置宽度的情况下，默认会填充父元素的宽度，此时不可以再设置`width:100%; padding:20px`，这样会造成元素过宽，撑出滚动条。
 3、right栏logo的间距：类似这样的同类元素的样式，可以统一先设置所有元素（如：`margin:10px 0`），然后针对特殊的元素（如头尾两个），使用伪类进行特殊处理（如：对第一个同类元素应用`:first-of-type`，使其`margin-top:0`），好酷炫的赶脚～😁
+4、关于clearfix详解：利用了`:before`和`:after`伪类，用`*zoom`兼容IE6、IE7，参考资料5前半部分。
 
 ## 参考资料
 1、[伪类和伪元素的区别](https://segmentfault.com/a/1190000000484493)
 2、[CSS选择器](http://www.w3school.com.cn/cssref/css_selectors.asp)
 3、[清除浮动黑科技](http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best)
 4、[清除浮动](http://zh.learnlayout.com/clearfix.html)
+5、[HTML和CSS定位详解](http://www.w3cplus.com/css/advanced-html-css-lesson2-detailed-css-positioning.html)
