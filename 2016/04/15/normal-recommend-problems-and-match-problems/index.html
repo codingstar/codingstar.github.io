@@ -15,7 +15,7 @@
 <meta property="og:description" content="现有数据集三部分：    商品信息    －》    基于内容的、相似度   《－ 搭配类目过滤    专家搭配    －》    概率模型（马尔可夫？）专家知识    X    历史记录    －》    同时购买次数－》相关性特征构建
 问题角度一般的推荐问题是：   把物品推荐给人搭配推荐问题是：    把物品推荐给物品，找搭配
 基于协同过滤&amp;emsp;&amp;emsp;一般的协同过滤，就是原本是直">
-<meta property="og:updated_time" content="2016-04-17T12:23:24.000Z">
+<meta property="og:updated_time" content="2016-04-17T12:28:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一般推荐问题和搭配问题的异同">
 <meta name="twitter:description" content="现有数据集三部分：    商品信息    －》    基于内容的、相似度   《－ 搭配类目过滤    专家搭配    －》    概率模型（马尔可夫？）专家知识    X    历史记录    －》    同时购买次数－》相关性特征构建
@@ -252,7 +252,7 @@
 <li>物品搭配，评价基于专家的知识，有主观性，但是可以认为是客观的，因为答案的目标是要接近专家搭配。</li>
 </ul>
 <p>&emsp;&emsp;所以本搭配问题本质上也是推荐，只不过不叫推荐；推荐也不仅是推荐，而是要模拟用户的行为，这样可以更好地促进购买行为。</p>
-<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>&emsp;&emsp;大多推荐算法所用的<a href="http://www.cnblogs.com/wentingtu/p/3579803.html" target="_blank" rel="external">公用数据集</a>，都是用户对于item（电影、书籍、新闻）的点击或评分记录，它们本身就有rate，并且表达了用户对item的关系强弱；<br>而本问题，不仅要找到一个合适的评分rate，也要研究如何利用这些评分进行搭配。</p>
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>&emsp;&emsp;大多推荐算法所用的<a href="http://www.cnblogs.com/wentingtu/p/3579803.html" target="_blank" rel="external">公用数据集</a>，都是用户对于item（电影、书籍、新闻）的点击或评分记录，它们本身就有rate，并且表达了用户对item的关系强弱.<br>&emsp;&emsp;而本问题，不仅要找到一个合适的评分rate，也要研究如何利用这些评分进行搭配。</p>
 <h1 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h1><p>&emsp;&emsp;若要考虑泛化到一般问题，那么就必须提炼出一个点，是可以应用在其他场景下的。</p>
 <p>&emsp;&emsp;考虑到原本的问题中，数据较为原始而与大多数据集有区别，通常意义上的相似度无法解释两个物品之间的关系，因此，需要构建一个“搭配度”，而这个“搭配度”应该也是一个创新点吧。那么如何泛化这个搭配度的构建呢？如果需要在这个上面做泛化，就需要找到其它类似的数据集。而什么类型的问题也会涉及到“搭配”这个概念呢？拥有不同分类的商品才可能涉及到“搭配”，但是大多公用数据集，都是电影、书籍、新闻，怎么存在这种类型的搭配另一种更好的情况呢？</p>
 <p>&emsp;&emsp;那么，如果对于评分矩阵的处理的话，不就回归成跟别人一样研究协同过滤相关的各种优化了吗？但是本问题的两个对象的维度一样大，都是商品－商品的量。</p>
