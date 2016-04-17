@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 16.67px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a>
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 15px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 17.5px;">技术</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 12.5px;">生活</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
 					</div>
 				</section>
 				
@@ -186,6 +186,82 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-normal-recommend-problems-and-match-problems" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/normal-recommend-problems-and-match-problems/" class="article-date">
+  	<time datetime="2016-04-15T06:56:55.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/normal-recommend-problems-and-match-problems/">一般推荐问题和搭配问题的异同</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="现有数据集"><a href="#现有数据集" class="headerlink" title="现有数据集"></a>现有数据集</h1><p>三部分：<br>    商品信息    －》    基于内容的、相似度   《－ 搭配类目过滤<br>    专家搭配    －》    概率模型（马尔可夫？）专家知识    X<br>    历史记录    －》    同时购买次数－》相关性特征构建</p>
+<h1 id="问题角度"><a href="#问题角度" class="headerlink" title="问题角度"></a>问题角度</h1><p>一般的推荐问题是：   把物品推荐给人<br>搭配推荐问题是：    把物品推荐给物品，找搭配</p>
+<h1 id="基于协同过滤"><a href="#基于协同过滤" class="headerlink" title="基于协同过滤"></a>基于协同过滤</h1><p>一般的协同过滤，就是原本是直接评价人和物品的关系的，现在通过协同历史评分表现，把对应评分高的物品的相似物品推荐给用户（item-based）；或者把物品推荐给评分兴趣相似的用户（user-based）。<br>因此，若是用协同过滤，评分rate就是物品对于物品的关系。</p>
+<ul>
+<li>第一步，关键在于这个rate的构建，rate就是我所说的搭配度</li>
+<li>第二步，对评分矩阵的处理：<ul>
+<li>稀疏矩阵分解？</li>
+<li>用于协同过滤</li>
+</ul>
+</li>
+</ul>
+<h1 id="评价方式"><a href="#评价方式" class="headerlink" title="评价方式"></a>评价方式</h1><p>从结果上说：</p>
+<ul>
+<li>搭配推荐评价推荐结果的标准是相对于专家搭配套餐的命中、召回率，map@200（Mean Average Precision）。</li>
+<li>而普通推荐，是用测试用户的实际购买行为作为参考的准确率、多样性等。</li>
+</ul>
+<p>其实是类似的。</p>
+<ul>
+<li>普通推荐，评价基于大量用户的行为，具有一定的客观性，答案要接近用户的行为；</li>
+<li>物品搭配，评价基于专家的知识，有主观性，但是可以认为是客观的，因为答案的目标是要接近专家搭配。</li>
+</ul>
+<p>所以本搭配问题本质上也是推荐，只不过不叫推荐；推荐也不仅是推荐，而是要模拟用户的行为，这样可以更好地促进购买行为。</p>
+<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>大多推荐算法所用的<a href="http://www.cnblogs.com/wentingtu/p/3579803.html" target="_blank" rel="external">公用数据集</a>，都是用户对于item（电影、书籍、新闻）的点击或评分记录，它们本身就有rate，并且表达了用户对item的关系强弱；<br>而本问题，不仅要找到一个合适的评分rate，也要研究如何利用这些评分进行搭配。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>若要考虑泛化到一般问题，</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学术/">学术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思路记录/">思路记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/论文/">论文</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-mysql-privileges" class="article article-type-post" itemscope itemprop="blogPost">
   
