@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>判断一棵树是否是另一棵树的子树 | Cool King</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。
+题目描述给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。给定树节点的定义为：1234567891011struct tnode&amp;#123;	int value;	tnode* left;	tnode* right;	tnode(int v) &amp;#123;   //这个构造函数是我为了调试时构造节点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="判断一棵树是否是另一棵树的子树">
+<meta property="og:url" content="http://yoursite.com/2016/04/22/same-subtree/index.html">
+<meta property="og:site_name" content="Cool King">
+<meta property="og:description" content="昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。
+题目描述给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。给定树节点的定义为：1234567891011struct tnode&amp;#123;	int value;	tnode* left;	tnode* right;	tnode(int v) &amp;#123;   //这个构造函数是我为了调试时构造节点">
+<meta property="og:updated_time" content="2016-05-16T07:00:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="判断一棵树是否是另一棵树的子树">
+<meta name="twitter:description" content="昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。
+题目描述给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。给定树节点的定义为：1234567891011struct tnode&amp;#123;	int value;	tnode* left;	tnode* right;	tnode(int v) &amp;#123;   //这个构造函数是我为了调试时构造节点">
+  
+    <link rel="alternative" href="/atom.xml" title="Cool King" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cool King</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 15px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 17.5px;">技术</a> <a href="/tags/推荐系统/" style="font-size: 10px;">推荐系统</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 12.5px;">生活</a> <a href="/tags/积累/" style="font-size: 12.5px;">积累</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://wonderflow.github.io/">bobo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://comzyh.com/blog/">comzyh</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://implusdream.info/">翔哥</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://justyc.sinaapp.com/">justyc</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.proginn.com/user/register/13234">程序员客栈</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://honx.in/_UqRN5IKo114jtl5H">红杏</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cool King</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cool King</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-same-subtree" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/22/same-subtree/" class="article-date">
+  	<time datetime="2016-04-22T02:09:24.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      判断一棵树是否是另一棵树的子树
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。<br>给定树节点的定义为：<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct tnode</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> value<span class="comment">;</span></span><br><span class="line">	tnode* left<span class="comment">;</span></span><br><span class="line">	tnode* right<span class="comment">;</span></span><br><span class="line">	tnode(<span class="keyword">int</span> v) &#123;   <span class="comment">//这个构造函数是我为了调试时构造节点方便而写的</span></span><br><span class="line">		value = v<span class="comment">;</span></span><br><span class="line">		left = NULL<span class="comment">;</span></span><br><span class="line">		right = NULL<span class="comment">;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="考虑思路"><a href="#考虑思路" class="headerlink" title="考虑思路"></a>考虑思路</h1><p>这题题意清晰，数据量没有给，应该也不是很大。有其他小伙伴认为可以遍历两个树，得到两个字符串，看是否第二个是第一个的子串。这个想法可能有一定的道理，但是同一个字符串，出现在遍历出来的字符串中的不同位置，也不一定代表就是子树，因为重复的字符串首先在第一个树中要是一个完整的子树才行。要进行这样的判断，太耗时耗力了，还不如考虑直接暴力搜索。</p>
+<p>如果是暴搜的话，就要考虑如何搜。最直观的想法是，用第一层dfs枚举母树（第一棵树）的每个节点，然后用第二层dfs（或者bfs也行）遍历当前两棵子树，看是否一模一样。一旦发现相同的，就返回1。最后找不到，就返回-1。</p>
+<p>然后就是一些细节问题了，要考虑左右子树完全相同才行。</p>
+<h1 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h1><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> issame(tnode* mu_root, tnode* zi_root) &#123;   <span class="comment">//判断两棵树是否相同</span></span><br><span class="line">	<span class="keyword">if</span> (mu_root-&gt;value != zi_root-&gt;value)  <span class="comment">//当前节点不同，树肯定不同</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (mu_root-&gt;left==<span class="keyword">NULL</span> &amp;&amp; mu_root-&gt;right==<span class="keyword">NULL</span>) &#123; <span class="comment">//当前节点相同且母树为叶节点</span></span><br><span class="line">        <span class="keyword">if</span> (zi_root-&gt;left==<span class="keyword">NULL</span> &amp;&amp; zi_root-&gt;right==<span class="keyword">NULL</span>)<span class="comment">//子树也是页节点</span></span><br><span class="line">		      <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (mu_root-&gt;left != <span class="keyword">NULL</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (zi_root-&gt;left == <span class="keyword">NULL</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">bool</span> bl = issame(mu_root-&gt;left, zi_root-&gt;left); <span class="comment">//查看左子树</span></span><br><span class="line">		<span class="keyword">if</span> (!bl)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (zi_root-&gt;left != <span class="keyword">NULL</span>) 	<span class="comment">//母树没有左子树但子树有</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (mu_root-&gt;right != <span class="keyword">NULL</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (zi_root-&gt;right == <span class="keyword">NULL</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">bool</span> bl = issame(mu_root-&gt;right, zi_root-&gt;right); <span class="comment">//查看右子树</span></span><br><span class="line">		<span class="keyword">if</span> (!bl)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (zi_root-&gt;right != <span class="keyword">NULL</span>)	<span class="comment">//母树没有右子树但子树有</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//左右子树都相同，才算相同</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> dfs(tnode* mu_root, tnode* zi_root) &#123;  <span class="comment">// 第一层dfs枚举</span></span><br><span class="line">	<span class="keyword">if</span> (mu_root-&gt;left==<span class="keyword">NULL</span> &amp;&amp; mu_root-&gt;right==<span class="keyword">NULL</span>) &#123; <span class="comment">//若是叶子节点</span></span><br><span class="line">        <span class="comment">//直接返回是否同为叶节点且相等</span></span><br><span class="line">		<span class="keyword">return</span> mu_root-&gt;value==zi_root-&gt;value &amp;&amp; zi_root-&gt;left==<span class="keyword">NULL</span> &amp;&amp; zi_root-&gt;right==<span class="keyword">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">bool</span> res = issame(mu_root, zi_root); <span class="comment">//看以mu_root和zi_root为根节点的两个树是否相同</span></span><br><span class="line">	<span class="keyword">if</span> (res)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//若不同，继续深搜枚举</span></span><br><span class="line">	<span class="keyword">if</span> (mu_root-&gt;left != <span class="keyword">NULL</span>) &#123;   <span class="comment">//左子节点</span></span><br><span class="line">		<span class="keyword">bool</span> res_l = dfs(mu_root-&gt;left, zi_root);</span><br><span class="line">		<span class="keyword">if</span> (res_l)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (mu_root-&gt;right != <span class="keyword">NULL</span>) &#123;  <span class="comment">//右子节点</span></span><br><span class="line">		<span class="keyword">bool</span> res_r = dfs(mu_root-&gt;right, zi_root);</span><br><span class="line">		<span class="keyword">if</span> (res_r)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> solve(tnode* root1, tnode* root2) &#123; <span class="comment">//解决问题的主要函数</span></span><br><span class="line">	<span class="keyword">bool</span> ans = dfs(root1, root2);</span><br><span class="line">	<span class="keyword">if</span> (!ans)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/15/normal-recommend-problems-and-match-problems/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一般推荐问题和搭配问题的异同</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="same-subtree" data-title="判断一棵树是否是另一棵树的子树" data-url="http://yoursite.com/2016/04/22/same-subtree/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Cool King
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258257455'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258257455%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
