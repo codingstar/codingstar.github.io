@@ -10,7 +10,7 @@ tags: [算法, 积累, 搜索, 笔试]
 若不能，则输出`ERROR`；
 若可以形成首尾相连的圈，则输出`CIRCLE`；
 否则，依次输出排序后的所有字符串。
-
+<!--more-->
 # 考虑思路
 此题关键在于字符串的首位两个字符，是个典型的欧拉路问题，需要判断能否形成欧拉路、能否形成欧拉回路，若存在欧拉路，需要输出该路径。
 
@@ -41,16 +41,16 @@ tags: [算法, 积累, 搜索, 笔试]
 注意到这里有个小trick，看题目描述，不能被区分大小写这句突兀的话误导（汗其实自己想当然了。。＝ ＝），题目说的是字符串，可以是任何可见字符，不一定是大小写字母。所以点的数量不只26*2个。
 
 # 关键代码
-```
+```c++
 /**  数据结构  **/
 const int MAXN = 500;
 //存放所有字符串，由于相同开头结尾的字符串可能有多个，因此不可以直接用矩阵存，而需要邻接表
 struct Str
 {
-	char str[5];
-	int next;
-	bool used;
-	Str() {next = -1; used = 0;}
+    char str[5];
+    int next;
+    bool used;
+    Str() {next = -1; used = 0;}
 }word[1000005];  //字符串信息
 int word_list[MAXN][MAXN];//邻接表头，word_list[a][b]表示以a开头b结尾的字符串
 
@@ -69,22 +69,22 @@ bool vis[MAXN];     //并查集
 
 void find_path_d(int now, int& step)
 {
-	for (int i = MAXN-1; i >= 0; i--)
-	{
-		while (mat[now][i])
-		{
-			mat[now][i]--;
-			find_path_d(i, step);
-		}
-	}
-	path[step++] = now;
+    for (int i = MAXN-1; i >= 0; i--)
+    {
+        while (mat[now][i])
+        {
+            mat[now][i]--;
+            find_path_d(i, step);
+        }
+    }
+    path[step++] = now;
 }
 int euclid_path(int start) //套圈法
 {
-	int ret=0; //步长
-	memset(path, -1, sizeof(path));
-	find_path_d(start,ret);
-	return ret;
+    int ret=0; //步长
+    memset(path, -1, sizeof(path));
+    find_path_d(start,ret);
+    return ret;
 }
 
 int Find(int x)  
@@ -107,17 +107,17 @@ bool check(int a, int b)
     int r1 = in[a] - out[a];  
     int r2 = in[b] - out[b];  
     if((r1==1 && r2==-1) || (r1==-1 && r2==1))  
-    	return true;  
+        return true;  
     return false;  
 }
 
 int solve(int x)
 {
-	int diff = 0;
-	int odd_a = 0;
-	int odd_b = 0;
-	int line = 0;
-	x = Find(x);  
+    int diff = 0;
+    int odd_a = 0;
+    int odd_b = 0;
+    int line = 0;
+    x = Find(x);  
     for(int i = 0; i < MAXN; i++)  
     {  
         if(vis[i])  
@@ -141,98 +141,98 @@ int solve(int x)
         }  
     }
     if(line==0 && diff==0)
-    	return 1;
+        return 1;
     if(line==0 && diff == 2 && check(odd_a,odd_b))
-    	return 2;
+        return 2;
     return -1;
 }
 
 void init()
 {
-	memset(mat, 0, sizeof(mat));
-	memset(vis, 0, sizeof(vis));  
+    memset(mat, 0, sizeof(mat));
+    memset(vis, 0, sizeof(vis));  
     memset(in, 0, sizeof(in));  
     memset(out, 0, sizeof(out));
     for (int i  = 0 ; i < MAXN; i++)
-    	father[i] = i;
+        father[i] = i;
 }
 
 int main()
 {
-	while (gets(line)!=NULL)
-	{
-		p = strtok(line, " ");
-		init();
-		int num = 0;
-		bool table[60];
-		memset(table, 0, sizeof(table));
-		//建图
-		int x;
-		int cnt = 0;
-		while(p)
-		{
-			int st, ed;
-			st = p[0];
-			ed = p[strlen(p)-1];
-		    if (!table[st])
-		    {
-		    	num++;
-		    	table[st] = 1;
-		    }
-		    if (!table[ed])
-		    {
-		    	num++;
-		    	table[ed] = 1;
-		    }
+    while (gets(line)!=NULL)
+    {
+        p = strtok(line, " ");
+        init();
+        int num = 0;
+        bool table[60];
+        memset(table, 0, sizeof(table));
+        //建图
+        int x;
+        int cnt = 0;
+        while(p)
+        {
+            int st, ed;
+            st = p[0];
+            ed = p[strlen(p)-1];
+            if (!table[st])
+            {
+                num++;
+                table[st] = 1;
+            }
+            if (!table[ed])
+            {
+                num++;
+                table[ed] = 1;
+            }
             //保存该字符串
-		    strcpy(word[cnt].str, p);
-		    word[cnt].next = word_list[st][ed];
-		    word[cnt].used = 0;
-		    word_list[st][ed] = cnt++;
-		    p = strtok(NULL, " ");
+            strcpy(word[cnt].str, p);
+            word[cnt].next = word_list[st][ed];
+            word[cnt].used = 0;
+            word_list[st][ed] = cnt++;
+            p = strtok(NULL, " ");
             // 连边并统计 度
-		    mat[st][ed] += 1;
-		    in[ed]++;
-		    out[st]++;
-		    vis[st] = vis[ed] = 1;
-		    Union(st, ed);
-		    x = st;
-		}
-		int ans = solve(x);
-		if (ans == 1)
-		{
-			puts("CIRCLE");
-		}
-		else if (ans == -1)
-		{
-			puts("ERROR");
-		}
-		else
-		{
-			//选初始点
-			int i;
-			for (i = 0; i < MAXN; i++)
-			{
-				if (out[i]-in[i]==1)
-					break;
-			}
-			int len = euclid_path(i);
-			for (int i = len-2; i >= 0; i--)
-			{
-				int word_id = word_list[path[i+1]][path[i]];
-				while (word[word_id].used && word[word_id].next!=-1)
-				{
-					word_id = word[word_id].next;
-				}
-				if (word_id!=-1)
-				{
-					word[word_id].used = 1;
-					printf("%s ", word[word_id].str);
-				}
-			}
-			puts("");
-		}
-	}
-	return 0;
+            mat[st][ed] += 1;
+            in[ed]++;
+            out[st]++;
+            vis[st] = vis[ed] = 1;
+            Union(st, ed);
+            x = st;
+        }
+        int ans = solve(x);
+        if (ans == 1)
+        {
+            puts("CIRCLE");
+        }
+        else if (ans == -1)
+        {
+            puts("ERROR");
+        }
+        else
+        {
+            //选初始点
+            int i;
+            for (i = 0; i < MAXN; i++)
+            {
+                if (out[i]-in[i]==1)
+                    break;
+            }
+            int len = euclid_path(i);
+            for (int i = len-2; i >= 0; i--)
+            {
+                int word_id = word_list[path[i+1]][path[i]];
+                while (word[word_id].used && word[word_id].next!=-1)
+                {
+                    word_id = word[word_id].next;
+                }
+                if (word_id!=-1)
+                {
+                    word[word_id].used = 1;
+                    printf("%s ", word[word_id].str);
+                }
+            }
+            puts("");
+        }
+    }
+    return 0;
 }
 ```
