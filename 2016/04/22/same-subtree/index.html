@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Cool King">
 <meta property="og:description" content="昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。
 题目描述给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。给定树节点的定义为：1234567891011struct tnode&amp;#123;	int value;	tnode* left;	tnode* right;	tnode(int v) &amp;#123;   //这个构造函数是我为了调试时构造节点">
-<meta property="og:updated_time" content="2016-05-16T07:00:46.000Z">
+<meta property="og:updated_time" content="2016-05-27T06:55:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断一棵树是否是另一棵树的子树">
 <meta name="twitter:description" content="昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。
@@ -228,6 +228,7 @@
       
         <p>昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。</p>
 <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。<br>给定树节点的定义为：<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct tnode</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> value<span class="comment">;</span></span><br><span class="line">	tnode* left<span class="comment">;</span></span><br><span class="line">	tnode* right<span class="comment">;</span></span><br><span class="line">	tnode(<span class="keyword">int</span> v) &#123;   <span class="comment">//这个构造函数是我为了调试时构造节点方便而写的</span></span><br><span class="line">		value = v<span class="comment">;</span></span><br><span class="line">		left = NULL<span class="comment">;</span></span><br><span class="line">		right = NULL<span class="comment">;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h1 id="考虑思路"><a href="#考虑思路" class="headerlink" title="考虑思路"></a>考虑思路</h1><p>这题题意清晰，数据量没有给，应该也不是很大。有其他小伙伴认为可以遍历两个树，得到两个字符串，看是否第二个是第一个的子串。这个想法可能有一定的道理，但是同一个字符串，出现在遍历出来的字符串中的不同位置，也不一定代表就是子树，因为重复的字符串首先在第一个树中要是一个完整的子树才行。要进行这样的判断，太耗时耗力了，还不如考虑直接暴力搜索。</p>
 <p>如果是暴搜的话，就要考虑如何搜。最直观的想法是，用第一层dfs枚举母树（第一棵树）的每个节点，然后用第二层dfs（或者bfs也行）遍历当前两棵子树，看是否一模一样。一旦发现相同的，就返回1。最后找不到，就返回-1。</p>
 <p>然后就是一些细节问题了，要考虑左右子树完全相同才行。</p>
