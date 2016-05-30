@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 12.5px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 15px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 17.5px;">技术</a> <a href="/tags/推荐系统/" style="font-size: 10px;">推荐系统</a> <a href="/tags/搜索/" style="font-size: 12.5px;">搜索</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 12.5px;">生活</a> <a href="/tags/积累/" style="font-size: 15px;">积累</a> <a href="/tags/笔试/" style="font-size: 12.5px;">笔试</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 14px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 18px;">技术</a> <a href="/tags/推荐系统/" style="font-size: 10px;">推荐系统</a> <a href="/tags/搜索/" style="font-size: 14px;">搜索</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 12px;">生活</a> <a href="/tags/积累/" style="font-size: 16px;">积累</a> <a href="/tags/笔试/" style="font-size: 14px;">笔试</a> <a href="/tags/算法/" style="font-size: 14px;">算法</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
 					</div>
 				</section>
 				
@@ -186,6 +186,68 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-gas-of-go" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/30/gas-of-go/" class="article-date">
+  	<time datetime="2016-05-30T06:09:24.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/gas-of-go/">围棋 判断是否需要吃子，吃掉多少</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前两天做到的题目。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。<br>双方可以连续下子。<br>一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。<br>有几种情况：</p>
+<pre><code>1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
+2. 当落子正确且没有吃子时，输出`0`；
+3. 当落子将对手的气为0时，输出吃掉的棋子个数，正数为白子，负数为黑子；
+4. 当落子使双方气都为0时，只能吃掉对手的棋，输出棋子个数（同3）。
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/30/gas-of-go/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-euler-path" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -330,7 +392,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。<br>给定树节点的定义为：<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct tnode</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> value<span class="comment">;</span></span><br><span class="line">	tnode* left<span class="comment">;</span></span><br><span class="line">	tnode* right<span class="comment">;</span></span><br><span class="line">	tnode(<span class="keyword">int</span> v) &#123;   <span class="comment">//这个构造函数是我为了调试时构造节点方便而写的</span></span><br><span class="line">		value = v<span class="comment">;</span></span><br><span class="line">		left = NULL<span class="comment">;</span></span><br><span class="line">		right = NULL<span class="comment">;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。<br>给定树节点的定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct tnode</span><br><span class="line">&#123;</span><br><span class="line">	int value;</span><br><span class="line">	tnode* left;</span><br><span class="line">	tnode* right;</span><br><span class="line">	tnode(int v) &#123;   //这个构造函数是我为了调试时构造节点方便而写的</span><br><span class="line">		value = v;</span><br><span class="line">		left = NULL;</span><br><span class="line">		right = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -701,76 +763,6 @@
       
         <p class="article-more-link">
           <a  href="/2015/09/20/recent-for-0920/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-SCBPM-paper-note" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/06/08/SCBPM-paper-note/" class="article-date">
-  	<time datetime="2015-06-08T12:15:04.000Z" itemprop="datePublished">2015-06-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/08/SCBPM-paper-note/">SCBPM paper note</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Recently, I read a paper named <A Web Service for Scholarly Big Data Information Extraction>. Here is some notes about it.</p>
-<p>#Abstract</p>
-<h3 id="Extraction"><a href="#Extraction" class="headerlink" title="Extraction"></a>Extraction</h3><ul>
-<li>The automatic extraction of metadata and other information from scholarly documents</li>
-<li>In academic digital libraries, search engines, and document management systems</li>
-<li>To allow for the management and categorization of documents and for search to take place</li>
-</ul>
-<h3 id="A-Web-accessible-API-can-simplify-this-extraction"><a href="#A-Web-accessible-API-can-simplify-this-extraction" class="headerlink" title="A Web-accessible API can simplify this extraction"></a>A Web-accessible API can <em>simplify</em> this extraction</h3><blockquote>
-<p>by providing a single point of operation for extraction that can be incorporated into multiple document workflows without the need for each workflow to implement and support its own extraction functionality</p>
-</blockquote>
-<p>CiteSeerExtractor</p>
-<ul>
-<li><p>a <em>RESTful API</em> for scholarly information extraction that exploits the fact that there is duplication in scholarly big data and makes use of a near duplicate matching backend</p>
-</li>
-<li><p>the duplicate document matching results in a difference of <em>8.46%</em> in the time required to extract header and citation information from approximately <em>3.5 million</em> documents compared to a baseline.</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学术/">学术</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/06/08/SCBPM-paper-note/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

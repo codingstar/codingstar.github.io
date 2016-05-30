@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>围棋 判断是否需要吃子，吃掉多少 | Cool King</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前两天做到的题目。
+题目描述给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。双方可以连续下子。一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。有几种情况：
+1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
+2. 当落子正确且没有吃子时，输出`0`；
+3. 当落子将对手的气为0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="围棋 判断是否需要吃子，吃掉多少">
+<meta property="og:url" content="http://yoursite.com/2016/05/30/gas-of-go/index.html">
+<meta property="og:site_name" content="Cool King">
+<meta property="og:description" content="前两天做到的题目。
+题目描述给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。双方可以连续下子。一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。有几种情况：
+1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
+2. 当落子正确且没有吃子时，输出`0`；
+3. 当落子将对手的气为0">
+<meta property="og:updated_time" content="2016-05-30T07:32:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="围棋 判断是否需要吃子，吃掉多少">
+<meta name="twitter:description" content="前两天做到的题目。
+题目描述给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。双方可以连续下子。一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。有几种情况：
+1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
+2. 当落子正确且没有吃子时，输出`0`；
+3. 当落子将对手的气为0">
+  
+    <link rel="alternative" href="/atom.xml" title="Cool King" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Cool King</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 14px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 18px;">技术</a> <a href="/tags/推荐系统/" style="font-size: 10px;">推荐系统</a> <a href="/tags/搜索/" style="font-size: 14px;">搜索</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 12px;">生活</a> <a href="/tags/积累/" style="font-size: 16px;">积累</a> <a href="/tags/笔试/" style="font-size: 14px;">笔试</a> <a href="/tags/算法/" style="font-size: 14px;">算法</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://wonderflow.github.io/">bobo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://comzyh.com/blog/">comzyh</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://implusdream.info/">翔哥</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://justyc.sinaapp.com/">justyc</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.proginn.com/user/register/13234">程序员客栈</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://honx.in/_UqRN5IKo114jtl5H">红杏</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Cool King</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://lh3.googleusercontent.com/-PFXU0ACC2SA/AAAAAAAAAAI/AAAAAAAAABA/Mw2yX1EYrzg/s120-c/photo.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Cool King</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">酷王——菜鸟的打怪升级之路</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/codingstar" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/codingyjt@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-gas-of-go" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/30/gas-of-go/" class="article-date">
+  	<time datetime="2016-05-30T06:09:24.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      围棋 判断是否需要吃子，吃掉多少
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前两天做到的题目。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。<br>双方可以连续下子。<br>一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。<br>有几种情况：</p>
+<pre><code>1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
+2. 当落子正确且没有吃子时，输出`0`；
+3. 当落子将对手的气为0时，输出吃掉的棋子个数，正数为白子，负数为黑子；
+4. 当落子使双方气都为0时，只能吃掉对手的棋，输出棋子个数（同3）。
+</code></pre><a id="more"></a>
+<h1 id="考虑思路"><a href="#考虑思路" class="headerlink" title="考虑思路"></a>考虑思路</h1><p>这题纯模拟，只要仔细一点，把题目理解清楚，然后按这几种情况实现即可，主要用到的是bfs。1A。<br>注意到这里重要的是数每一个棋子块（上下左右连通的棋子）的气的个数，然后去吃相应颜色的棋子。</p>
+<p>数完棋盘上每个棋子块的气后，要根据条件1.a、3、4判断这手棋是否正确并且要吃哪种棋。<br>吃棋的时候，用bfs再数一遍那个颜色的棋子的气，遇到气为0的，就把bfs队列里的棋子吃掉。</p>
+<p>ps，由于上一次落子会影响下一次，因此需要注意控制出错时要把当前棋子从棋盘上去掉。</p>
+<p>棋盘大小10*10，因此用bfs遍历，时间复杂度可以接受。</p>
+<p>还是贴一下代码吧～一定要耐心仔细～</p>
+<h1 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> ERROR = <span class="number">2147483647</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[<span class="number">15</span>][<span class="number">15</span>];    <span class="comment">//棋盘</span></span><br><span class="line"><span class="keyword">int</span> cnt;    <span class="comment">//当前棋子个数</span></span><br><span class="line"><span class="keyword">int</span> p[<span class="number">105</span>][<span class="number">3</span>]; <span class="comment">//当前棋子</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">15</span>][<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dir[<span class="number">4</span>][<span class="number">2</span>] = &#123;<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ok</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt;= <span class="number">0</span> &amp;&amp; x &lt; <span class="number">10</span> &amp;&amp; y &gt;= <span class="number">0</span> &amp;&amp; y &lt; <span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> stx, <span class="keyword">int</span> sty, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> c)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> beg, end;</span><br><span class="line">    beg = end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> que[<span class="number">105</span>][<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">int</span> sched[<span class="number">15</span>][<span class="number">15</span>];</span><br><span class="line">    <span class="built_in">memset</span>(sched, <span class="number">0</span>, <span class="keyword">sizeof</span>(sched));</span><br><span class="line">    que[end][<span class="number">0</span>] = stx;</span><br><span class="line">    que[end][<span class="number">1</span>] = sty;</span><br><span class="line">    end++;</span><br><span class="line">    sched[stx][sty] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> qi = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (beg &lt; end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> nx = que[beg][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> ny = que[beg][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> nc = g[que[beg][<span class="number">0</span>]][que[beg][<span class="number">1</span>]];</span><br><span class="line">        vis[nx][ny] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> tx = nx + dir[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> ty = ny + dir[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (ok(tx,ty) &amp;&amp; !sched[tx][ty])</span><br><span class="line">            &#123;</span><br><span class="line">                sched[tx][ty] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (g[tx][ty] == nc) <span class="comment">//same piece</span></span><br><span class="line">                &#123;</span><br><span class="line">                    que[end][<span class="number">0</span>] = tx;</span><br><span class="line">                    que[end][<span class="number">1</span>] = ty;</span><br><span class="line">                    end++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (g[tx][ty] == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    qi++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        beg++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> qi;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">eat</span><span class="params">(<span class="keyword">int</span> color)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> sched[<span class="number">15</span>][<span class="number">15</span>];</span><br><span class="line">    <span class="keyword">int</span> que[<span class="number">105</span>][<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">int</span> beg, end;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(sched, <span class="number">0</span>, <span class="keyword">sizeof</span>(sched));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> nx = <span class="number">0</span>; nx &lt; <span class="number">10</span>; nx++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> ny = <span class="number">0</span>; ny &lt; <span class="number">10</span>; ny++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (g[nx][ny] != color || sched[nx][ny])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">//start to bfs same pieces &amp;&amp; count qi</span></span><br><span class="line">            beg = end = <span class="number">0</span>;</span><br><span class="line">            que[end][<span class="number">0</span>] = nx;</span><br><span class="line">            que[end][<span class="number">1</span>] = ny;</span><br><span class="line">            end++;</span><br><span class="line">            sched[nx][ny] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> qi = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (beg &lt; end)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> nowx = que[beg][<span class="number">0</span>];</span><br><span class="line">                <span class="keyword">int</span> nowy = que[beg][<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> tx = nowx + dir[i][<span class="number">0</span>];</span><br><span class="line">                    <span class="keyword">int</span> ty = nowy + dir[i][<span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span> (ok(tx,ty) &amp;&amp; !sched[tx][ty])</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span> (g[tx][ty] == color) <span class="comment">//same piece</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            que[end][<span class="number">0</span>] = tx;</span><br><span class="line">                            que[end][<span class="number">1</span>] = ty;</span><br><span class="line">                            end++;</span><br><span class="line">                            sched[tx][ty] = <span class="number">1</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (g[tx][ty] == <span class="number">0</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            qi++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                beg++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (qi == <span class="number">0</span>) <span class="comment">//eat</span></span><br><span class="line">            &#123;</span><br><span class="line">                sum += end; <span class="comment">//吃掉棋子的个数</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; end; j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> lossx = que[j][<span class="number">0</span>];</span><br><span class="line">                    <span class="keyword">int</span> lossy = que[j][<span class="number">1</span>];</span><br><span class="line">                    g[lossx][lossy] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> c)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">int</span> flag[<span class="number">2</span>];</span><br><span class="line">    flag[<span class="number">0</span>] = flag[<span class="number">1</span>] = <span class="number">0</span>; <span class="comment">//分别代表白棋、黑棋气为0的块数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (g[i][j] == <span class="number">0</span> || vis[i][j])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> qi = bfs(i, j, x, y, c);<span class="comment">//选择没遍历过的起点</span></span><br><span class="line">            <span class="keyword">if</span> (qi == <span class="number">0</span>)</span><br><span class="line">                flag[g[i][j]<span class="number">-1</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> tobe;</span><br><span class="line">    <span class="keyword">int</span> res;</span><br><span class="line">    <span class="keyword">if</span> (flag[<span class="number">0</span>] &amp;&amp; flag[<span class="number">1</span>]) <span class="comment">//eat the other</span></span><br><span class="line">    &#123;</span><br><span class="line">        tobe = (c == <span class="number">1</span> ? <span class="number">2</span> : <span class="number">1</span>);</span><br><span class="line">        res = eat(tobe);</span><br><span class="line">        <span class="keyword">if</span> (tobe == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>-res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag[<span class="number">0</span>] &gt; <span class="number">0</span> &amp;&amp; c == <span class="number">1</span>) <span class="comment">//憋死自己了</span></span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span> (flag[<span class="number">1</span>] &gt; <span class="number">0</span> &amp;&amp; c == <span class="number">2</span>) <span class="comment">//憋死自己了</span></span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    tobe = (c == <span class="number">1</span> ? <span class="number">2</span> : <span class="number">1</span>);</span><br><span class="line">    res = eat(tobe);</span><br><span class="line">    <span class="keyword">if</span> (tobe == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>-res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> px, py, pc;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;g[i][j]); <span class="comment">//读取棋盘初始状态</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;px, &amp;py, &amp;pc)) <span class="comment">//落子</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (g[px][py] != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ERROR);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        g[px][py] = pc;</span><br><span class="line">        <span class="keyword">int</span> ans = solve(px, py, pc); <span class="comment">//判断落子是否正确，判断吃几个子</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">        <span class="keyword">if</span> (ans == ERROR)</span><br><span class="line">        &#123;</span><br><span class="line">            g[px][py] = <span class="number">0</span>; <span class="comment">//出错重置</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/27/euler-path/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">判断是否存在欧拉回路、欧拉路，输出欧拉路</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="gas-of-go" data-title="围棋 判断是否需要吃子，吃掉多少" data-url="http://yoursite.com/2016/05/30/gas-of-go/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Cool King
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258257455'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258257455%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
