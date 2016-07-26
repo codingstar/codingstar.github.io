@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 14px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 18px;">技术</a> <a href="/tags/推荐系统/" style="font-size: 10px;">推荐系统</a> <a href="/tags/搜索/" style="font-size: 14px;">搜索</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 12px;">生活</a> <a href="/tags/积累/" style="font-size: 16px;">积累</a> <a href="/tags/笔试/" style="font-size: 14px;">笔试</a> <a href="/tags/算法/" style="font-size: 14px;">算法</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a>
+						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/学术/" style="font-size: 13.33px;">学术</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/思路记录/" style="font-size: 10px;">思路记录</a> <a href="/tags/总结/" style="font-size: 20px;">总结</a> <a href="/tags/技术/" style="font-size: 18.33px;">技术</a> <a href="/tags/推荐系统/" style="font-size: 10px;">推荐系统</a> <a href="/tags/搜索/" style="font-size: 13.33px;">搜索</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/生活/" style="font-size: 11.67px;">生活</a> <a href="/tags/积累/" style="font-size: 16.67px;">积累</a> <a href="/tags/笔试/" style="font-size: 13.33px;">笔试</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/论文/" style="font-size: 10px;">论文</a> <a href="/tags/面试/" style="font-size: 13.33px;">面试</a>
 					</div>
 				</section>
 				
@@ -186,6 +186,698 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-TST-frontend-interview2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/26/TST-frontend-interview2/" class="article-date">
+  	<time datetime="2016-07-26T11:00:51.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/26/TST-frontend-interview2/">腾讯TST 前端面试总结（二）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上午刚回家，晚饭前二面就突然来了😂</p>
+<p>这次请求了十分钟准备😂：</p>
+<ol>
+<li><p>如果一个页面打开了之后空白，你会如何定位问题？如果不是网络、服务器的问题，就是前端问题，该如何定位？</p>
+</li>
+<li><p>平常用什么浏览器?怎么调试的？chrome开发者工具平常都用到了什么？关于性能的调试用到了啥？<br> 我说主要是chrome；用chrome的开发者工具；除了性能，我其它的基本都有了😂。</p>
+</li>
+<li><p>关于HTTP，cache怎么控制的？如果允许缓存，一个页面访问缓存的流程是怎样的？<br> 我说用cache-control,pragma;</p>
+</li>
+<li><p>关于项目：php用的什么版本？nodejs的websocket是自己实现的还是用的组件？如何划分模块？开发环境是windows还是linux？<br> 这个基本上就照实说了。</p>
+</li>
+<li><p>用了什么前端构建工具？<br> grunt，介绍了用过什么功能，是否自己搭建。</p>
+</li>
+<li><p>js中setTimeout的函数执行时间？触发了setTimeout后会立即执行吗？</p>
+</li>
+<li><p>关于前端性能、安全性问题？提到了CSIF</p>
+</li>
+<li><p>H5的移动端和PC端页面开发有什么区别？</p>
+</li>
+<li><p>window.onload 是什么时候触发的？<br> 啊这个问题前两天才看过T^T…然后不确定，本来想说是在完全加载完成后执行的，结果最后还是答了个错的答案。。QAQ。。。<a href="http://www.jb51.net/article/21628.htm" target="_blank" rel="external">window.onload与document.ready的区别</a>.</p>
+</li>
+<li><p>jquery的入口函数写在哪里？为什么？<br>我说写在页面的body结束前，因为这样页面都会加载完再执行js代码。应该少说了个 页面的加载不会被js代码阻塞 吧。</p>
+</li>
+</ol>
+<p>同样的，这次的面试官声音也好好听啊。。。😂然而基本都是问我了解过的东西，不是很深，感觉还是比较看重基础扎实的。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-TST-frontend-interview" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/26/TST-frontend-interview/" class="article-date">
+  	<time datetime="2016-07-26T08:46:51.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/26/TST-frontend-interview/">腾讯TST 前端面试总结（一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>校招终于拉开帷幕了，投了几个公司，企鹅动作最快了，简直不知道开心还是不开心好了～😂</p>
+<p>第一次正式的电话面试就献给企鹅了～</p>
+<p>7月19日投的内推简历，21日就来电话了～幸好当时在工作室里刚吃完晚饭。。。😂</p>
+<p>投的是前端开发，凭回忆记录下几个题目吧：</p>
+<ol>
+<li><p>首先介绍下做过的自我感觉最好的项目<br> 我就只能拿枪弹柜这个说了，只是因为我全程都参与这个项目，最为了解，但是其实说实话它虽然体量还算庞大，用到了好些个相关技术，但是却不深，感觉并没有太大说服力。面试官也没有太多地深入问。所以感觉最好要有一个自己从头开发的有难度的小项目就好了，若是在github上有star或者fork肯定更加分～</p>
+</li>
+<li><p>css的margin重叠问题<br> 说实话，之前并没有系统地了解过，只有个大概的映像，答的不好，详细答案在<a href="http://www.hujuntao.com/web/css/css-margin-overlap.html" target="_blank" rel="external">这里</a>。</p>
+</li>
+<li><p>javascript的事件绑定</p>
+</li>
+<li><p>性能优化问题<br> 这个不太了解，没说</p>
+</li>
+<li><p>安全性问题<br> 这个不太了解，没说</p>
+</li>
+</ol>
+<p>其他的想到再补充吧。。。😂</p>
+<p>总的来说，自我感觉不太满意，但是面试哥哥的声音好好听啊。。。😄人也好nice，最后问我还有没有啥问题，我问了他们现在用的前端技术都是啥，结果他很详细的跟我介绍了一遍，还是很有收获哒～<br>真正公司里的前端需要考虑的地方有很多，平常许多没注意到或者没精力顾及到的问题，在这里都需要考虑，而且还很重要。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-front-end-interview-questions" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/30/front-end-interview-questions/" class="article-date">
+  	<time datetime="2016-05-30T06:09:24.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/front-end-interview-questions/">前端面试题 积累</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基础知识是一切的基石！</p>
+<p>由于目前前端的东西全都是自己自学然后实践得来的，并不系统，写这篇blog的直接目的是为了记录前端面试可能会遇到的问题，间接目的主要是能够让自己开始系统地学习这些知识，为更长远的发展奠定基础。问题是转来的<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Question/README.md" target="_blank" rel="external">1</a>，答案是用自己的理解叙述的。</p>
+<p>#前端基础知识点<br>    HTML&amp;CSS：<br>        对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、<br>        HTML5、CSS3、Flexbox</p>
+<pre><code>JavaScript：
+    数据类型、运算、对象、Function、继承、闭包、作用域、原型链、事件、RegExp、JSON、Ajax、
+    DOM、BOM、内存泄漏、跨域、异步装载、模板引擎、前端MVC、路由、模块化、Canvas、ECMAScript 6、Nodejs
+
+其他：
+    移动端、响应式、自动化构建、HTTP、离线存储、WEB安全、优化、重构、团队协作、可维护、易用性、SEO、UED、架构、职业生涯、快速学习能力
+</code></pre><p>#前端开发面试题</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="list">目录</a></h2><ol>
+<li><a href="#html">HTML部分</a></li>
+<li><a href="#css">CSS部分</a></li>
+<li><a href="#js">JavaScript部分</a></li>
+<li><a href="#other">其他问题</a></li>
+<li><a href="#web">前端学习网站推荐</a></li>
+</ol>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a><a name="html">HTML</a></h2><ul>
+<li><p>Doctype作用？严格模式与混杂模式如何区分？它们有何意义?</p>
+<pre><code>1. Doctype是用于标识文档的HTML或XHTML规范，浏览器根据这个标签使用相应的规范解析页面，DOCTYPE不对或不存在将以兼容模式呈现；
+2.
+3. 严格模式是以该浏览器的最高标准运行；混杂模式（兼容模式）是以宽松的向后兼容的模式运行，模拟老式浏览器的行为使页面得以正常显示。
+</code></pre></li>
+<li><p>HTML5 为什么只需要写 &lt;!DOCTYPE HTML&gt;？</p>
+</li>
+<li><p>行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</p>
+<pre><code>1. 行内元素：span、a、b、img、input、select、strong、i
+2. 块级元素：div、form、h1(2,3...)、p、ul、ol、li、dl、dt、dd
+3. 空元素：hr、br、img、input、link、meta；textarea
+</code></pre></li>
+<li><p>页面导入样式时，使用link和@import有什么区别？</p>
+<pre><code>1. link在页面加载时同时加载，而@import在页面加载后再加载；
+2. link；@import只用于css中引入其他css
+</code></pre></li>
+<li><p>介绍一下你对浏览器内核的理解？</p>
+</li>
+<li><p>常见的浏览器内核有哪些？</p>
+<pre><code>1. webkit
+</code></pre></li>
+<li><p>html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和<br>HTML5？</p>
+</li>
+<li><p>简述一下你对HTML语义化的理解？</p>
+<pre><code>1. 语义化就是在去掉css之后页面呈现的文档顺序依然正确，用户也可以理解页面内容。
+2. 语义化对于开发者理解和维护代码有帮助
+</code></pre></li>
+<li><p>HTML5的离线储存怎么使用，工作原理能不能解释一下？</p>
+<pre><code>1. sessionStorage
+</code></pre></li>
+<li><p>浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？</p>
+</li>
+<li><p>请描述一下 cookies，sessionStorage 和 localStorage 的区别？</p>
+<pre><code>1. cookies：
+1. sessionStorage：就是会话时间内的存储
+1. localStorage：本地存储，可以在关闭浏览器后继续保存。
+</code></pre></li>
+<li><p>iframe有那些缺点？</p>
+</li>
+<li><p>Label的作用是什么？是怎么用的？（加 for 或 包裹）</p>
+</li>
+<li><p>HTML5的form如何关闭自动完成功能？</p>
+</li>
+<li><p>如何实现浏览器内多个标签页之间的通信? (阿里)</p>
+</li>
+<li><p>webSocket如何兼容低浏览器？(阿里)</p>
+</li>
+<li><p>页面可见性（Page Visibility API） 可以有哪些用途？</p>
+</li>
+<li><p>如何在页面上实现一个圆形的可点击区域？</p>
+</li>
+<li><p>实现不使用 border 画出1px高的线，在不同浏览器的Quirksmode和CSSCompat模式下都能保持同一效果。</p>
+</li>
+<li><p>网页验证码是干嘛的，是为了解决什么安全问题？</p>
+</li>
+<li><p>title与h1的区别、b与strong的区别、i与em的区别？</p>
+</li>
+</ul>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a><a name="css">CSS</a></h2><ul>
+<li><p>介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</p>
+</li>
+<li><p>CSS选择符有哪些？哪些属性可以继承？</p>
+</li>
+<li><p>CSS优先级算法如何计算？</p>
+</li>
+<li><p>CSS3新增伪类有那些？</p>
+</li>
+<li><p>如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？</p>
+</li>
+<li><p>display有哪些值？说明他们的作用。</p>
+</li>
+<li><p>position的值relative和absolute定位原点是？</p>
+</li>
+<li><p>CSS3有哪些新特性？</p>
+</li>
+<li><p>请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？</p>
+</li>
+<li><p>用纯CSS创建一个三角形的原理是什么？</p>
+</li>
+<li><p>一个满屏 品 字布局 如何设计?</p>
+</li>
+<li><p>经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？</p>
+</li>
+<li><p>li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</p>
+</li>
+<li><p>为什么要初始化CSS样式?</p>
+</li>
+<li><p>absolute的containing block计算方式跟正常流有什么不同？</p>
+</li>
+<li><p>CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？</p>
+</li>
+<li><p>position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？</p>
+</li>
+<li><p>对BFC规范(块级格式化上下文：block formatting context)的理解？</p>
+</li>
+<li><p>CSS权重优先级是如何计算的？</p>
+</li>
+<li><p>请解释一下为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式</p>
+</li>
+<li><p>移动端的布局用过媒体查询吗？</p>
+</li>
+<li><p>使用 CSS 预处理器吗？喜欢那个？</p>
+</li>
+<li><p>CSS优化、提高性能的方法有哪些？</p>
+</li>
+<li><p>浏览器是怎样解析CSS选择器的？</p>
+</li>
+<li><p>在网页中的应该使用奇数还是偶数的字体？为什么呢？</p>
+</li>
+<li><p>margin和padding分别适合什么场景使用？</p>
+</li>
+<li><p>抽离样式模块怎么写，说出思路，有无实践经验？[阿里航旅的面试题]</p>
+</li>
+<li><p>元素竖向的百分比设定是相对于容器的高度吗？</p>
+</li>
+<li><p>全屏滚动的原理是什么？用到了CSS的那些属性？</p>
+</li>
+<li><p>什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？</p>
+</li>
+<li><p>视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）</p>
+</li>
+<li><p>::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。</p>
+</li>
+<li><p>如何修改chrome记住密码后自动填充表单的黄色背景 ？</p>
+</li>
+<li><p>你对line-height是如何理解的？</p>
+</li>
+<li><p>设置元素浮动后，该元素的display值是多少？（自动变成display:block）</p>
+</li>
+<li><p>怎么让Chrome支持小于12px 的文字？</p>
+</li>
+<li><p>让页面里的字体变清晰，变细用CSS怎么做？（-webkit-font-smoothing: antialiased;）</p>
+</li>
+<li><p>font-style属性可以让它赋值为“oblique” oblique是什么意思？</p>
+</li>
+<li><p>position:fixed;在android下无效怎么处理？</p>
+</li>
+<li><p>如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）</p>
+</li>
+<li><p>display:inline-block 什么时候会显示间隙？(携程)</p>
+</li>
+<li><p>overflow: scroll时不能平滑滚动的问题怎么处理？</p>
+</li>
+<li><p>有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度。</p>
+</li>
+<li><p>png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？</p>
+</li>
+<li><p>什么是Cookie 隔离？（或者说：请求资源的时候不要让它带cookie怎么做）</p>
+</li>
+<li><p>style标签写在body后与body前有什么区别？</p>
+</li>
+<li><p>什么是CSS 预处理器 / 后处理器？</p>
+</li>
+</ul>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a><a name="js">JavaScript</a></h2><ul>
+<li><p>介绍JavaScript的基本数据类型。</p>
+</li>
+<li><p>说说写JavaScript的基本规范？</p>
+</li>
+<li><p>JavaScript原型，原型链 ? 有什么特点？</p>
+</li>
+<li><p>JavaScript有几种类型的值？（堆：原始数据类型和 栈：引用数据类型），你能画一下他们的内存图吗？</p>
+</li>
+<li><p>Javascript如何实现继承？</p>
+</li>
+<li><p>Javascript创建对象的几种方式？</p>
+</li>
+<li><p>Javascript作用链域?</p>
+</li>
+<li><p>谈谈this对象的理解。</p>
+</li>
+<li><p>eval是做什么的？</p>
+</li>
+<li><p>什么是window对象? 什么是document对象?</p>
+</li>
+<li><p>null，undefined的区别？</p>
+</li>
+<li><p>写一个通用的事件侦听器函数(机试题)。</p>
+</li>
+<li><p>[“1”, “2”, “3”].map(parseInt) 答案是多少？</p>
+</li>
+<li><p>关于事件，IE与火狐的事件机制有什么区别？ 如何阻止冒泡？</p>
+</li>
+<li><p>什么是闭包（closure），为什么要用它？</p>
+</li>
+<li><p>javascript 代码中的”use strict”;是什么意思 ? 使用它区别是什么？</p>
+</li>
+<li><p>如何判断一个对象是否属于某个类？</p>
+</li>
+<li><p>new操作符具体干了什么呢?</p>
+</li>
+<li><p>用原生JavaScript的实现过什么功能吗？</p>
+</li>
+<li><p>Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</p>
+</li>
+<li><p>对JSON的了解？</p>
+</li>
+<li><p><code>[].forEach.call($$(&quot;*&quot;),function(a){
+a.style.outline=&quot;1px solid #&quot;+(~~(Math.random()*(1&lt;&lt;24))).toString(16)
+})</code> 能解释一下这段代码的意思吗？</p>
+</li>
+<li><p>js延迟加载的方式有哪些？</p>
+</li>
+<li><p>Ajax 是什么? 如何创建一个Ajax？</p>
+</li>
+<li><p>同步和异步的区别?</p>
+</li>
+<li><p>如何解决跨域问题?</p>
+</li>
+<li><p>页面编码和被请求的资源编码如果不一致如何处理？</p>
+</li>
+<li><p>模块化开发怎么做？</p>
+</li>
+<li><p>AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？</p>
+</li>
+<li><p>requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何<br>缓存的？）</p>
+</li>
+<li><p>谈一谈你对ECMAScript6的了解？</p>
+</li>
+<li><p>ECMAScript6 怎么写class，为什么会出现class这种东西?</p>
+</li>
+<li><p>异步加载的方式有哪些？</p>
+</li>
+<li><p>documen.write和 innerHTML的区别?</p>
+</li>
+<li><p>DOM操作——怎样添加、移除、移动、复制、创建和查找节点?</p>
+</li>
+<li><p>.call() 和 .apply() 的作用和区别？</p>
+</li>
+<li><p>数组和对象有哪些原生方法，列举一下？</p>
+</li>
+<li><p>JS 怎么实现一个类。怎么实例化这个类</p>
+</li>
+<li><p>JavaScript中的作用域与变量声明提升？</p>
+</li>
+<li><p>如何编写高性能的Javascript？</p>
+</li>
+<li><p>那些操作会造成内存泄漏？</p>
+</li>
+<li><p>JQuery的源码看过吗？能不能简单概况一下它的实现原理？</p>
+</li>
+<li><p>jQuery.fn的init方法返回的this指的是什么对象？为什么要返回this？</p>
+</li>
+<li><p>jquery中如何将数组转化为json字符串，然后再转化回来？</p>
+</li>
+<li><p>jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？</p>
+</li>
+<li><p>jquery.extend 与 jquery.fn.extend的区别？</p>
+</li>
+<li><p>jQuery 的队列是如何实现的？队列可以用在哪些地方？</p>
+</li>
+<li><p>谈一下Jquery中的bind(),live(),delegate(),on()的区别？</p>
+</li>
+<li><p>JQuery一个对象可以同时绑定多个事件，这是如何实现的？</p>
+</li>
+<li><p>是否知道自定义事件。jQuery里的fire函数是什么意思，什么时候用？</p>
+</li>
+<li><p>jQuery 是通过哪个方法和 Sizzle 选择器结合的？（jQuery.fn.find()进入Sizzle）</p>
+</li>
+<li><p>针对 jQuery性能的优化方法？</p>
+</li>
+<li><p>Jquery与jQuery UI有啥区别？</p>
+</li>
+<li><p>JQuery的源码看过吗？能不能简单说一下它的实现原理？</p>
+</li>
+<li><p>jquery 中如何将数组转化为json字符串，然后再转化回来？</p>
+</li>
+<li><p>jQuery和Zepto的区别？各自的使用场景？</p>
+</li>
+<li><p>针对 jQuery 的优化方法？</p>
+</li>
+<li><p>Zepto的点透问题如何解决？</p>
+</li>
+<li><p>jQueryUI如何自定义组件?</p>
+</li>
+<li><p>需求：实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？</p>
+</li>
+<li><p>如何判断当前脚本运行在浏览器还是node环境中？（阿里）</p>
+</li>
+<li><p>移动端最小触控区域是多大？</p>
+</li>
+<li><p>jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?</p>
+</li>
+<li><p>把 Script 标签 放在页面的最底部的body封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？</p>
+</li>
+<li><p>移动端的点击事件的有延迟，时间是多久，为什么会有？ 怎么解决这个延时？（click 有 300ms 延迟,为了实现safari的双击事件的设计，浏览器要知道你是不是要双击操作。）</p>
+</li>
+<li><p>知道各种JS框架(Angular, Backbone, Ember, React, Meteor, Knockout…)么? 能讲出他们各自的优点和缺点么?</p>
+</li>
+<li><p>Underscore 对哪些 JS 原生对象进行了扩展以及提供了哪些好用的函数方法？</p>
+</li>
+<li><p>解释JavaScript中的作用域与变量声明提升？</p>
+</li>
+<li><p>那些操作会造成内存泄漏？</p>
+</li>
+<li><p>JQuery一个对象可以同时绑定多个事件，这是如何实现的？</p>
+</li>
+<li><p>Node.js的适用场景？</p>
+</li>
+<li><p>(如果会用node)知道route, middleware, cluster, nodemon, pm2, server-side rendering么?</p>
+</li>
+<li><p>解释一下 Backbone 的 MVC 实现方式？</p>
+</li>
+<li><p>什么是“前端路由”?什么时候适合使用“前端路由”? “前端路由”有哪些优点和缺点?</p>
+</li>
+<li><p>知道什么是webkit么? 知道怎么用浏览器的各种工具来调试和debug代码么?</p>
+</li>
+<li><p>如何测试前端代码么? 知道BDD, TDD, Unit Test么? 知道怎么测试你的前端工程么(mocha, sinon, jasmin, qUnit..)?</p>
+</li>
+<li><p>前端templating(Mustache, underscore, handlebars)是干嘛的, 怎么用?</p>
+</li>
+<li><p>简述一下 Handlebars 的基本用法？</p>
+</li>
+<li><p>简述一下 Handlerbars 的对模板的基本处理流程， 如何编译的？如何缓存的？</p>
+</li>
+<li><p>用js实现千位分隔符?(来源：<a href="http://div.io/topic/744" target="_blank" rel="external">前端农民工</a>，提示：正则+replace)</p>
+</li>
+<li><p>检测浏览器版本版本有哪些方式？</p>
+</li>
+<li><p>What is a Polyfill?</p>
+</li>
+<li><p>做的项目中，有没有用过或自己实现一些 polyfill 方案（兼容性处理方案）？</p>
+</li>
+<li><p>我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？</p>
+</li>
+</ul>
+<h4 id="ECMAScript6-相关"><a href="#ECMAScript6-相关" class="headerlink" title="ECMAScript6 相关"></a><a name="other">ECMAScript6 相关</a></h4><ul>
+<li>Object.is() 与原来的比较操作符“ ===”、“ ==”的区别？</li>
+</ul>
+<h4 id="前端框架相关"><a href="#前端框架相关" class="headerlink" title="前端框架相关"></a><a name="other">前端框架相关</a></h4><ul>
+<li>react-router 路由系统的实现原理？</li>
+</ul>
+<ul>
+<li>React中如何解决第三方类库的问题?</li>
+</ul>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a><a name="other">其他问题</a></h2><ul>
+<li><p>原来公司工作流程是怎么样的，如何与其他人协作的？如何夸部门合作的？</p>
+</li>
+<li><p>你遇到过比较难的技术问题是？你是如何解决的？</p>
+</li>
+<li><p>设计模式 知道什么是singleton, factory, strategy, decrator么?</p>
+</li>
+<li><p>常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？</p>
+</li>
+<li><p>页面重构怎么操作？</p>
+</li>
+<li><p>列举IE与其他浏览器不一样的特性？</p>
+</li>
+<li><p>99%的网站都需要被重构是那本书上写的？</p>
+</li>
+<li><p>什么叫优雅降级和渐进增强？</p>
+</li>
+<li><p>是否了解公钥加密和私钥加密。</p>
+</li>
+<li><p>WEB应用从服务器主动推送Data到客户端有那些方式？</p>
+</li>
+<li><p>对Node的优点和缺点提出了自己的看法？</p>
+</li>
+<li><p>你有用过哪些前端性能优化的方法？</p>
+</li>
+<li><p>http状态码有那些？分别代表是什么意思？</p>
+</li>
+<li><p>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</p>
+</li>
+<li><p>部分地区用户反应网站很卡，请问有哪些可能性的原因，以及解决方法？</p>
+</li>
+<li><p>从打开app到刷新出内容，整个过程中都发生了什么，如果感觉慢，怎么定位问题，怎么解决?</p>
+</li>
+<li><p>除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？</p>
+</li>
+<li><p>你用的得心应手用的熟练地编辑器&amp;开发环境是什么样子？</p>
+</li>
+<li><p>对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？</p>
+</li>
+<li><p>你怎么看待Web App 、hybrid App、Native App？</p>
+</li>
+<li><p>你移动端前端开发的理解？（和 Web 前端开发的主要区别是什么？）</p>
+</li>
+<li><p>你对加班的看法？</p>
+</li>
+<li><p>平时如何管理你的项目？</p>
+</li>
+<li><p>说说最近最流行的一些东西吧？常去哪些网站？</p>
+</li>
+<li><p>如何设计突发大规模并发架构？</p>
+</li>
+<li><p>说说最近最流行的一些东西吧？常去哪些网站？</p>
+</li>
+<li><p>是否了解开源的工具 bower、npm、yeoman、grunt、gulp，一个 npm 的包里的 package.json 具备的必要的字段都有哪些？（名称、版本号，依赖）</p>
+</li>
+<li><p>每个模块的代码结构都应该比较简单，且每个模块之间的关系也应该非常清晰，随着功能和迭代次数越来越多，你会如何去保持这个状态的？</p>
+</li>
+<li><p>Git知道branch, diff, merge么?</p>
+</li>
+<li><p>如何设计突发大规模并发架构？</p>
+</li>
+<li><p>当团队人手不足，把功能代码写完已经需要加班的情况下，你会做前端代码的测试吗？</p>
+</li>
+<li><p>说说最近最流行的一些东西吧？平时常去哪些网站？</p>
+</li>
+<li><p>知道什么是SEO并且怎么优化么? 知道各种meta data的含义么?</p>
+</li>
+<li><p>移动端（Android IOS）怎么做好用户体验?</p>
+</li>
+<li><p>简单描述一下你做过的移动APP项目研发流程？</p>
+</li>
+<li><p>你在现在的团队处于什么样的角色，起到了什么明显的作用？</p>
+</li>
+<li><p>你认为怎样才是全端工程师（Full Stack developer）？</p>
+</li>
+<li><p>介绍一个你最得意的作品吧？</p>
+</li>
+<li><p>你有自己的技术博客吗，用了哪些技术？</p>
+</li>
+<li><p>对前端安全有什么看法？</p>
+</li>
+<li><p>是否了解Web注入攻击，说下原理，最常见的两种攻击（XSS 和 CSRF）了解到什么程度？</p>
+</li>
+<li><p>项目中遇到国哪些印象深刻的技术难题，具体是什么问题，怎么解决？。</p>
+</li>
+<li><p>最近在学什么东西？</p>
+</li>
+<li><p>你的优点是什么？缺点是什么？</p>
+</li>
+<li><p>如何管理前端团队?</p>
+</li>
+<li><p>最近在学什么？能谈谈你未来3，5年给自己的规划吗？</p>
+</li>
+</ul>
+<h2 id="有趣的问题"><a href="#有趣的问题" class="headerlink" title="有趣的问题"></a>有趣的问题</h2><ul>
+<li>.A、B两人分别在两座岛上。B生病了，A有B所需要的药。C有一艘小船和一个可以上锁的箱子。C愿意在A和B之间运东西，但东西只能放在箱子里。只要箱子没被上锁，C都会偷走箱子里的东西，不管箱子里有什么。如果A和B各自有一把锁和只能开自己那把锁的钥匙，A应该如何把东西安全递交给B？</li>
+</ul>
+<pre><code>答案：A把药放进箱子，用自己的锁把箱子锁上。B拿到箱子后，再在箱子上加一把自己的锁。
+箱子运回A后，A取下自己的锁。箱子再运到B手中时，B取下自己的锁，获得药物。
+</code></pre><ul>
+<li><p>Amazon主页的左上角有一个商品分类浏览的下拉菜单 没有延迟，而且子菜单也不会在不应该的时候消失。它是怎样做到这一点的呢？</p>
+<pre><code>答案是通过探测鼠标移动的方向和轨迹，具体查看Khan Academy工程师 Ben Kamens 写的 jQuery插件
+</code></pre><p><img src="http://a.36krcnd.com/photo/3f716d75a80cdce23c803fc6f088846e.png" alt="这是 Khan Academy工程师 Ben Kamens 写的 jQuery插件"></p>
+</li>
+</ul>
+<h2 id="前端学习网站推荐"><a href="#前端学习网站推荐" class="headerlink" title="前端学习网站推荐"></a><a name="web">前端学习网站推荐</a></h2><pre><code>1. 极客标签：     http://www.gbtags.com/
+
+2. 码农周刊：     http://weekly.manong.io/issues/
+
+3. 前端周刊：     http://www.feweekly.com/issues
+
+4. 慕课网：       http://www.imooc.com/
+
+5. div.io：         http://div.io
+
+6. Hacker News： https://news.ycombinator.com/news
+
+7. InfoQ：       http://www.infoq.com/
+
+8. w3cplus：     http://www.w3cplus.com/
+
+9. Stack Overflow： http://stackoverflow.com/
+
+10.w3school：    http://www.w3school.com.cn/
+
+11.mozilla：     https://developer.mozilla.org/zh-CN/docs/Web/
+</code></pre><h2 id="文档推荐"><a href="#文档推荐" class="headerlink" title="文档推荐"></a><a name="web">文档推荐</a></h2><ol>
+<li><p><a href="http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html" title="jQuery 基本原理" target="_blank" rel="external">jQuery 基本原理</a></p>
+</li>
+<li><p><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/" target="_blank" rel="external">JavaScript 秘密花园</a></p>
+</li>
+<li><p><a href="http://css.doyoe.com/" target="_blank" rel="external">CSS参考手册</a></p>
+</li>
+<li><p><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">JavaScript 标准参考教程</a></p>
+</li>
+<li><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6入门</a></p>
+</li>
+</ol>
+<p>###更新时间:  2016-3-25</p>
+<pre><code>资料答案不够正确和全面，欢迎欢迎Star和提交issues。我的微博：http://weibo.com/920802999
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-gas-of-go" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -587,182 +1279,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/28/ife-task3/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-develop-notes" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/19/develop-notes/" class="article-date">
-  	<time datetime="2016-03-19T06:25:08.000Z" itemprop="datePublished">2016-03-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/19/develop-notes/">develop notes</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在做的一些项目，大多都是第一次接触这么复杂的项目，一路做下来，有一些经验教训，记录在这里~</p>
-<h2 id="关于数据库设计"><a href="#关于数据库设计" class="headerlink" title="关于数据库设计"></a>关于数据库设计</h2><p>· 键值<br>    作为表中每条记录的唯一标识，即使表述对象本身有唯一标识比如身份证号之类的，也最好有一个随机生成或是时间戳与其他信息组成的字符串作为键值。否则，在处理删除及删除后新建相同id的记录时会产生很麻烦的问题。</p>
-<h2 id="关于系统设计"><a href="#关于系统设计" class="headerlink" title="关于系统设计"></a>关于系统设计</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/19/develop-notes/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-tianchi-round-one" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/28/tianchi-round-one/" class="article-date">
-  	<time datetime="2015-10-28T02:20:10.000Z" itemprop="datePublished">2015-10-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/28/tianchi-round-one/">【天池】穿衣搭配-第一赛季</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近阴差阳错地入了天池大数据比赛的坑，第一次参加这种比赛，收获还是不少的~在此记录一下~</p>
-<h2 id="麻麻我不会穿衣搭配"><a href="#麻麻我不会穿衣搭配" class="headerlink" title="麻麻我不会穿衣搭配"></a>麻麻我不会穿衣搭配</h2><p>最初看到这个题目，第一感觉是好难啊，理解题目理解了好久，那么多数据集，组织形式都不一样，而且还有图像，都不知道如何下手，不知如何把这些数据组织起来。</p>
-<p>好在袁老板和君哥跟我进行了初步的探讨，带我稍稍入了下门~让我知道了协同过滤、关联规则挖掘这些算法的存在。然后袁老板的由简入繁的思想一直影响着我整个比赛过程，不然按照我强迫症和懒癌晚期的性子来的话，肯定没法开始就放弃了。</p>
-<p>拖了好久，看了好些资料才决定用python来写这个代码，到10月13日才正式开始敲代码来做这道题，而我还没学过python。幸好这个时候找到了姐姐和我玩这道题，于是我们先用搭配套餐划分了测试集和训练集，姐姐给力地完成了线下评测程序。</p>
-<p>然后我们就开始各种摸索：<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学术/">学术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/28/tianchi-round-one/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-recent-for-0920" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/20/recent-for-0920/" class="article-date">
-  	<time datetime="2015-09-20T13:21:51.000Z" itemprop="datePublished">2015-09-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/20/recent-for-0920/">最近工作梳理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>好久没写博客了，趁着今天数学建模坑死的节奏，来梳理一下吧。。。<em>(:зゝ∠)</em></p>
-<h2 id="前端学习"><a href="#前端学习" class="headerlink" title="前端学习"></a>前端学习</h2><p>在暑假的时候跟着百度ife前端学院学了一下web app相关的东西，这次说是自由组队，然而网上结交的队友水平不一时间不一实在是太伤了。。。到后来就我一个人在弄，后来事情一多差点又给忘了。所以现在只是完成了一个简单的记账本。</p>
-<p>其实第一次可以有机会在有指导和目标的情况下做自己喜欢的事情还是挺好的~在这期间，我有幸静下心来看了一些web app基础的理论，然后接触到了iScroll、Hammer、requireJS等组件，理解了iScroll的基本原理（下次最好自己做一套，它那个目前还是不太会用），接触了组件式开发，感觉棒棒哒~后来在一个静态网页展示的项目中，我用到了react.js+require.js，感觉理解又更深了一层，开发起来明显优雅许多~<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业/">创业</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作/">工作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/09/20/recent-for-0920/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
