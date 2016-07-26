@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Cool King</title>
+  <title>前端面试题 积累 | Cool King</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cool King">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="基础知识是一切的基石！
+由于目前前端的东西全都是自己自学然后实践得来的，并不系统，写这篇blog的直接目的是为了记录前端面试可能会遇到的问题，间接目的主要是能够让自己开始系统地学习这些知识，为更长远的发展奠定基础。问题是转来的1，答案是用自己的理解叙述的。
+#前端基础知识点    HTML&amp;amp;CSS：        对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题 积累">
+<meta property="og:url" content="http://yoursite.com/2016/05/30/front-end-interview-questions/index.html">
 <meta property="og:site_name" content="Cool King">
-<meta property="og:description">
+<meta property="og:description" content="基础知识是一切的基石！
+由于目前前端的东西全都是自己自学然后实践得来的，并不系统，写这篇blog的直接目的是为了记录前端面试可能会遇到的问题，间接目的主要是能够让自己开始系统地学习这些知识，为更长远的发展奠定基础。问题是转来的1，答案是用自己的理解叙述的。
+#前端基础知识点    HTML&amp;amp;CSS：        对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒">
+<meta property="og:image" content="http://a.36krcnd.com/photo/3f716d75a80cdce23c803fc6f088846e.png">
+<meta property="og:updated_time" content="2016-07-06T05:32:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cool King">
-<meta name="twitter:description">
+<meta name="twitter:title" content="前端面试题 积累">
+<meta name="twitter:description" content="基础知识是一切的基石！
+由于目前前端的东西全都是自己自学然后实践得来的，并不系统，写这篇blog的直接目的是为了记录前端面试可能会遇到的问题，间接目的主要是能够让自己开始系统地学习这些知识，为更长远的发展奠定基础。问题是转来的1，答案是用自己的理解叙述的。
+#前端基础知识点    HTML&amp;amp;CSS：        对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒">
+<meta name="twitter:image" content="http://a.36krcnd.com/photo/3f716d75a80cdce23c803fc6f088846e.png">
   
     <link rel="alternative" href="/atom.xml" title="Cool King" type="application/atom+xml">
   
@@ -185,167 +194,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-TST-frontend-interview2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/26/TST-frontend-interview2/" class="article-date">
-  	<time datetime="2016-07-26T11:00:51.000Z" itemprop="datePublished">2016-07-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/26/TST-frontend-interview2/">腾讯TST 前端面试总结（二）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上午刚回家，晚饭前二面就突然来了😂</p>
-<p>这次请求了十分钟准备😂：</p>
-<ol>
-<li>如果一个页面打开了之后空白，你会如何定位问题？如果不是网络、服务器的问题，就是前端问题，该如何定位？</li>
-</ol>
-<ol>
-<li><p>平常用什么浏览器?怎么调试的？chrome开发者工具平常都用到了什么？关于性能的调试用到了啥？</p>
-<pre><code>我说主要是chrome；用chrome的开发者工具；除了性能，我其它的基本都有了😂。
-</code></pre></li>
-<li><p>关于HTTP，cache怎么控制的？如果允许缓存，一个页面访问缓存的流程是怎样的？</p>
-<pre><code>我说用cache-control,pragma;
-</code></pre></li>
-<li><p>关于项目：php用的什么版本？nodejs的websocket是自己实现的还是用的组件？如何划分模块？开发环境是windows还是linux？</p>
-<pre><code>这个基本上就照实说了。
-</code></pre></li>
-<li><p>用了什么前端构建工具？</p>
-<pre><code>grunt，介绍了用过什么功能，是否自己搭建。
-</code></pre></li>
-<li><p>js中setTimeout的函数执行时间？触发了setTimeout后会立即执行吗？</p>
-</li>
-<li><p>关于前端性能、安全性问题？提到了CSIF</p>
-</li>
-<li><p>H5的移动端和PC端页面开发有什么区别？</p>
-</li>
-<li><p>window.onload 是什么时候触发的？</p>
-<pre><code>啊这个问题前两天才看过T^T...然后不确定，本来想说是在完全加载完成后执行的，结果最后还是答了个错的答案。。QAQ。。。[window.onload与document.ready的区别](http://www.jb51.net/article/21628.htm).
-</code></pre></li>
-<li><p>jquery的入口函数写在哪里？为什么？</p>
-<pre><code>我说写在页面的body结束前，因为这样页面都会加载完再执行js代码。应该少说了个 页面的加载不会被js代码阻塞 吧。
-</code></pre></li>
-</ol>
-<p>同样的，这次的面试官声音也好好听。。。😂然而基本都是问我了解过的东西，不是很深，感觉还是比较看重基础扎实的。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-TST-frontend-interview" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/26/TST-frontend-interview/" class="article-date">
-  	<time datetime="2016-07-26T08:46:51.000Z" itemprop="datePublished">2016-07-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/26/TST-frontend-interview/">腾讯TST 前端面试总结（一）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>校招终于拉开帷幕了，投了几个公司，企鹅动作最快了，简直不知道开心还是不开心好了～😂</p>
-<p>第一次正式的电话面试就献给企鹅了～</p>
-<p>7月19日投的内推简历，21日就来电话了～幸好当时在工作室里刚吃完晚饭。。。😂</p>
-<p>投的是前端开发，凭回忆记录下几个题目吧：</p>
-<ol>
-<li><p>首先介绍下做过的自我感觉最好的项目</p>
-<pre><code>我就只能拿枪弹柜这个说了，只是因为我全程都参与这个项目，最为了解，但是其实说实话它虽然体量还算庞大，用到了好些个相关技术，但是却不深，感觉并没有太大说服力。面试官也没有太多地深入问。所以感觉最好要有一个自己从头开发的有难度的小项目就好了，若是在github上有star或者fork肯定更加分～
-</code></pre></li>
-<li><p>css的margin重叠问题</p>
-<pre><code>说实话，之前并没有系统地了解过，只有个大概的映像，答的不好，详细答案在[这里](http://www.hujuntao.com/web/css/css-margin-overlap.html)。
-</code></pre></li>
-<li><p>javascript的事件绑定</p>
-</li>
-<li><p>性能优化问题</p>
-<pre><code>这个不太了解，没说
-</code></pre></li>
-<li><p>安全性问题</p>
-<pre><code>这个不太了解，没说
-</code></pre></li>
-</ol>
-<p>其他的想到再补充吧。。。😂</p>
-<p>总的来说，自我感觉不太满意，但是面试哥哥的声音好好听啊。。。😄人也好nice，最后问我还有没有啥问题，我问了他们现在用的前端技术都是啥，结果他很详细的跟我介绍了一遍，还是很有收获哒～<br>真正公司里的前端需要考虑的地方有很多，平常许多没注意到或者没精力顾及到的问题，在这里都需要考虑，而且还很重要。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-front-end-interview-questions" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-front-end-interview-questions" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/05/30/front-end-interview-questions/" class="article-date">
@@ -361,12 +210,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/front-end-interview-questions/">前端面试题 积累</a>
+    <h1 class="article-title" itemprop="name">
+      前端面试题 积累
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -868,448 +728,70 @@ a.style.outline=&quot;1px solid #&quot;+(~~(Math.random()*(1&lt;&lt;24))).toStri
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-  
-    <article id="post-gas-of-go" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/30/gas-of-go/" class="article-date">
-  	<time datetime="2016-05-30T06:09:24.000Z" itemprop="datePublished">2016-05-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2016/07/26/TST-frontend-interview/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/gas-of-go/">围棋 判断是否需要吃子，吃掉多少</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前两天做到的题目。</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。<br>双方可以连续下子。<br>一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。<br>有几种情况：</p>
-<pre><code>1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
-2. 当落子正确且没有吃子时，输出`0`；
-3. 当落子将对手的气为0时，输出吃掉的棋子个数，正数为白子，负数为黑子；
-4. 当落子使双方气都为0时，只能吃掉对手的棋，输出棋子个数（同3）。
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/30/gas-of-go/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-euler-path" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/27/euler-path/" class="article-date">
-  	<time datetime="2016-05-27T02:09:24.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          腾讯TST 前端面试总结（一）
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/euler-path/">判断是否存在欧拉回路、欧拉路，输出欧拉路</a>
-    </h1>
   
+    <a href="/2016/05/30/gas-of-go/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">围棋 判断是否需要吃子，吃掉多少</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前两天做到的题目。</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定若干个长度为4的字符串，用空格分隔，判断这些字符串能否排成首尾相连的字符串。字母区分大小写。</p>
-<p>若不能，则输出<code>ERROR</code>；<br>若可以形成首尾相连的圈，则输出<code>CIRCLE</code>；<br>否则，依次输出排序后的所有字符串。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/27/euler-path/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
 
-
-
-
-
-  
-    <article id="post-ife-task4" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/16/ife-task4/" class="article-date">
-  	<time datetime="2016-05-16T08:46:51.000Z" itemprop="datePublished">2016-05-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/16/ife-task4/">ife-2016s task4笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="题目要求-传送门"><a href="#题目要求-传送门" class="headerlink" title="题目要求 传送门"></a>题目要求 <a href="http://ife.baidu.com/task/detail?taskId=4">传送门</a></h2><p>实现灰色元素水平垂直居中，有两个四分之一圆位于其左上角和右下角。</p>
-<h2 id="关键实现方法"><a href="#关键实现方法" class="headerlink" title="关键实现方法"></a>关键实现方法</h2><p>由于需要在任何情况下都能使元素水平垂直居中，因此考虑将body设置为fixed，然后用绝对定位定位灰色元素，其中的黄色扇形由<code>position: absolute</code>控制使其相对于灰色矩形位于左上角和右下角。</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>1、相对（relative）定位元素的默认位置还是被元素自身占用，别的元素是无法占用的。也就是说相对定位元素的位移是相对于<code>元素自身</code>的边缘进行位移。<br>2、绝对（absolute）定位元素的位置是相对于最近的一个设置为<code>相对 或 绝对</code>定位的祖先元素的。<br>3、固定（fixed）定位元素相对于浏览器窗口，并且不会随滚动条进行滚动（不兼容IE6）。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/16/ife-task4/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="front-end-interview-questions" data-title="前端面试题 积累" data-url="http://yoursite.com/2016/05/30/front-end-interview-questions/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-  
-    <article id="post-same-subtree" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/22/same-subtree/" class="article-date">
-  	<time datetime="2016-04-22T02:09:24.000Z" itemprop="datePublished">2016-04-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/22/same-subtree/">判断一棵树是否是另一棵树的子树</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>昨天做到一道百度的笔试题，感觉对深搜的理解很有帮助，记录一下。</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个子树，树节点的数值唯一，问第二棵树是否是第一棵树的子树。是就返回1，否则-1。<br>给定树节点的定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct tnode</span><br><span class="line">&#123;</span><br><span class="line">	int value;</span><br><span class="line">	tnode* left;</span><br><span class="line">	tnode* right;</span><br><span class="line">	tnode(int v) &#123;   //这个构造函数是我为了调试时构造节点方便而写的</span><br><span class="line">		value = v;</span><br><span class="line">		left = NULL;</span><br><span class="line">		right = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/22/same-subtree/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-normal-recommend-problems-and-match-problems" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/normal-recommend-problems-and-match-problems/" class="article-date">
-  	<time datetime="2016-04-15T06:56:55.000Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/normal-recommend-problems-and-match-problems/">一般推荐问题和搭配问题的异同</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="现有数据集"><a href="#现有数据集" class="headerlink" title="现有数据集"></a>现有数据集</h1><p>三部分：<br>    商品信息    －》    基于内容的、相似度   《－ 搭配类目过滤<br>    专家搭配    －》    概率模型（马尔可夫？）专家知识    X<br>    历史记录    －》    同时购买次数－》相关性特征构建</p>
-<h1 id="问题角度"><a href="#问题角度" class="headerlink" title="问题角度"></a>问题角度</h1><p>一般的推荐问题是：   把物品推荐给人<br>搭配推荐问题是：    把物品推荐给物品，找搭配</p>
-<h1 id="基于协同过滤"><a href="#基于协同过滤" class="headerlink" title="基于协同过滤"></a>基于协同过滤</h1><p>&emsp;&emsp;一般的协同过滤，就是原本是直接评价人和物品的关系的，现在通过协同历史评分表现，把对应评分高的物品的相似物品推荐给用户（item-based）；或者把物品推荐给评分兴趣相似的用户（user-based）。<br>&emsp;&emsp;因此，若是用协同过滤，评分rate就是物品对于物品的关系。</p>
-<ul>
-<li>第一步，关键在于这个rate的构建，rate就是我所说的搭配度</li>
-<li>第二步，对评分矩阵的处理：<ul>
-<li>稀疏矩阵分解？</li>
-<li>用于协同过滤</li>
-</ul>
-</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学术/">学术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思路记录/">思路记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/推荐系统/">推荐系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/论文/">论文</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/15/normal-recommend-problems-and-match-problems/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-mysql-privileges" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/30/mysql-privileges/" class="article-date">
-  	<time datetime="2016-03-30T02:48:51.000Z" itemprop="datePublished">2016-03-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/30/mysql-privileges/">mysql访问权限控制命令</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>为了保证安全性，mysql默认都是只允许localhost访问的，但是实际操作中，会需要远程访问。可以用下面的命令：</p>
-<h2 id="授权法"><a href="#授权法" class="headerlink" title="授权法"></a>授权法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON dbname.* TO <span class="string">'myuser'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'mypassword'</span> WITH GRANT OPTION;</span><br><span class="line">flush PRIVILEGES;</span><br></pre></td></tr></table></figure>
-<p>表示将dbname数据库的所有表的权限 授权给 任意ip 以myuser用户名和mypassword密码登录。然后立即刷新，使授权生效。</p>
-<p>还有另一种方法是改表法，命令比较多，实际用起来不如授权法方便，这里就不写了～</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>1、<a href="http://www.xshell.net/database/1206.html" target="_blank" rel="external">解决MySQL不允许从远程访问的方法</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-ife-task3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/28/ife-task3/" class="article-date">
-  	<time datetime="2016-03-28T12:46:51.000Z" itemprop="datePublished">2016-03-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/28/ife-task3/">ife-2016s task3笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="题目要求-传送门"><a href="#题目要求-传送门" class="headerlink" title="题目要求 传送门"></a>题目要求 <a href="http://ife.baidu.com/task/detail?taskId=3">传送门</a></h2><p>实现三栏式布局，要求左右两宽度固定，中间一栏填充父元素宽度</p>
-<h2 id="关键实现方法"><a href="#关键实现方法" class="headerlink" title="关键实现方法"></a>关键实现方法</h2><p>页面结构主要是由一个wrap包裹住所有模块，内含left、right、middle三个部分，其中left、right的float属性分别为left、right，middle的html代码一定要写在最后。然后固定左右两部分的宽度，设置中间栏的左右margin，差不多就可以完成三栏式的基本布局了。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/28/ife-task3/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
   <div class="outer">
