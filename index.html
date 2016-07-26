@@ -216,9 +216,8 @@
         <p>上午刚回家，晚饭前二面就突然来了😂</p>
 <p>这次请求了十分钟准备😂：</p>
 <ol>
-<li>如果一个页面打开了之后空白，你会如何定位问题？如果不是网络、服务器的问题，就是前端问题，该如何定位？</li>
-</ol>
-<ol>
+<li><p>如果一个页面打开了之后空白，你会如何定位问题？如果不是网络、服务器的问题，就是前端问题，该如何定位？</p>
+</li>
 <li><p>平常用什么浏览器?怎么调试的？chrome开发者工具平常都用到了什么？关于性能的调试用到了啥？<br> 我说主要是chrome；用chrome的开发者工具；除了性能，我其它的基本都有了😂。</p>
 </li>
 <li><p>关于HTTP，cache怎么控制的？如果允许缓存，一个页面访问缓存的流程是怎样的？<br> 我说用cache-control,pragma;</p>
@@ -321,68 +320,6 @@
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-gas-of-go" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/30/gas-of-go/" class="article-date">
-  	<time datetime="2016-05-30T06:09:24.000Z" itemprop="datePublished">2016-05-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/gas-of-go/">围棋 判断是否需要吃子，吃掉多少</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前两天做到的题目。</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。<br>双方可以连续下子。<br>一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。<br>有几种情况：</p>
-<pre><code>1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
-2. 当落子正确且没有吃子时，输出`0`；
-3. 当落子将对手的气为0时，输出吃掉的棋子个数，正数为白子，负数为黑子；
-4. 当落子使双方气都为0时，只能吃掉对手的棋，输出棋子个数（同3）。
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/30/gas-of-go/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -928,6 +865,68 @@ a.style.outline=&quot;1px solid #&quot;+(~~(Math.random()*(1&lt;&lt;24))).toStri
 
       
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-gas-of-go" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/30/gas-of-go/" class="article-date">
+  	<time datetime="2016-05-30T06:09:24.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/gas-of-go/">围棋 判断是否需要吃子，吃掉多少</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前两天做到的题目。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个10*10的棋盘，0代表空，1代表白子，2代表黑子。<br>双方可以连续下子。<br>一个上下左右连续的棋子块，其上下左右的空白位置就是它的气，当某次下子使对手的棋子的气为0时，就要吃掉那些气为0的棋子。<br>有几种情况：</p>
+<pre><code>1. 当落子仅使自己的气为0(a)，或下到非空白处时(b)，输出`2147483647`；
+2. 当落子正确且没有吃子时，输出`0`；
+3. 当落子将对手的气为0时，输出吃掉的棋子个数，正数为白子，负数为黑子；
+4. 当落子使双方气都为0时，只能吃掉对手的棋，输出棋子个数（同3）。
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/积累/">积累</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/30/gas-of-go/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
